@@ -1,0 +1,412 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MARLIFT EMPILHADEIRA | Contato</title>
+    <!-- Font Awesome 6 (Free) -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Roboto, system-ui, sans-serif;
+        }
+
+        body {
+            background: linear-gradient(145deg, #f3f6fb 0%, #e9eef4 100%);
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 2rem 1.5rem;
+        }
+
+        .contact-card {
+            max-width: 1300px;
+            width: 100%;
+            background: rgba(255,255,255,0.75);
+            backdrop-filter: blur(10px);
+            -webkit-backdrop-filter: blur(10px);
+            border-radius: 3rem 3rem 2rem 2rem;
+            box-shadow: 0 30px 50px rgba(0, 20, 30, 0.2), 0 10px 20px rgba(0,0,0,0.1);
+            overflow: hidden;
+            border: 1px solid rgba(255,255,255,0.5);
+        }
+
+        /* cabeçalho com imagem e titulo */
+        .hero {
+            background: #0b2b3b;
+            background-image: radial-gradient(circle at 30% 40%, rgba(255,215,0,0.15) 0%, transparent 40%);
+            padding: 2.5rem 2.5rem 1.8rem 2.5rem;
+            color: white;
+            display: flex;
+            flex-wrap: wrap;
+            align-items: center;
+            justify-content: space-between;
+            gap: 2rem;
+            border-bottom: 5px solid #f5c542;
+        }
+
+        .brand h1 {
+            font-size: 6.2rem;
+            font-weight: 800;
+            letter-spacing: -0.5px;
+            line-height: 1.1;
+            text-transform: uppercase;
+            background: linear-gradient(135deg, #fff8e0, #fcd34d);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            text-shadow: 0 2px 5px rgba(0,0,0,0.3);
+        }
+
+        .brand h1 span {
+            font-size: 2.6rem;
+            display: block;
+            font-weight: 500;
+            letter-spacing: 2px;
+            color: #ffdb7c;
+            background: none;
+            -webkit-text-fill-color: #ffdb7c;
+            text-shadow: 0 2px 3px #00000050;
+        }
+
+        .empilhadeira-img {
+            max-width: 380px;
+            width: 100%;
+            filter: drop-shadow(0 10px 15px #00000050);
+        }
+
+        .empilhadeira-img img {
+            width: 100%;
+            height: auto;
+            display: block;
+            border-radius: 20px 20px 20px 20px;
+            border: 3px solid #f5c542;
+            object-fit: cover;
+            aspect-ratio: 16/9;
+            background: #2d4b5e;
+        }
+
+        /* grade de contatos */
+        .info-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+            gap: 2rem;
+            padding: 2.8rem 2.5rem 2rem 2.5rem;
+            background: #ffffffd9;
+            backdrop-filter: blur(4px);
+        }
+
+        .contact-item {
+            display: flex;
+            flex-direction: column;
+            align-items: flex-start;
+            gap: 0.7rem;
+            background: white;
+            padding: 1.8rem 1.5rem;
+            border-radius: 2rem;
+            box-shadow: 0 10px 25px -10px rgba(0,40,50,0.2);
+            transition: transform 0.2s ease, box-shadow 0.3s;
+            border: 1px solid rgba(245, 197, 66, 0.2);
+        }
+
+        .contact-item:hover {
+            transform: translateY(-6px);
+            box-shadow: 0 25px 30px -12px #f5c54280;
+            border-color: #f5c542;
+        }
+
+        .icon-circle {
+            background: #0b2b3b;
+            width: 60px;
+            height: 60px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 2rem;
+            color: #f5c542;
+            border: 2px solid #f5c542;
+            margin-bottom: 0.2rem;
+        }
+
+        .contact-item h3 {
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: #0f3a4a;
+            letter-spacing: -0.3px;
+        }
+
+        .contact-item a, .contact-item p {
+            font-size: 1.2rem;
+            text-decoration: none;
+            color: #1e2f3b;
+            font-weight: 500;
+            word-break: break-word;
+            display: flex;
+            align-items: center;
+            gap: 0.6rem;
+            transition: color 0.2s;
+        }
+
+        .contact-item a i {
+            color: #f5c542;
+            font-size: 1.4rem;
+            width: 24px;
+        }
+
+        .contact-item a:hover {
+            color: #b87c10;
+        }
+
+        .endereco-bloco {
+            display: flex;
+            flex-direction: column;
+            gap: 0.3rem;
+        }
+        .endereco-bloco i {
+            color: #f5c542;
+            font-size: 1.3rem;
+            margin-right: 0.5rem;
+            width: 28px;
+        }
+        .endereco-bloco p {
+            display: flex;
+            align-items: center;
+        }
+
+        /* BOTÃO FLUTUANTE WHATSAPP */
+        .whatsapp-float {
+            position: fixed;
+            bottom: 30px;
+            right: 30px;
+            width: 70px;
+            height: 70px;
+            background: linear-gradient(135deg, #25D366 0%, #128C7E 100%);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            box-shadow: 0 8px 25px rgba(37, 211, 102, 0.5);
+            z-index: 1000;
+            text-decoration: none;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            animation: pulse-wa 2s infinite;
+        }
+
+        .whatsapp-float:hover {
+            transform: scale(1.1);
+            box-shadow: 0 12px 35px rgba(37, 211, 102, 0.7);
+        }
+
+        .whatsapp-float i {
+            color: white;
+            font-size: 2.5rem;
+        }
+
+        .whatsapp-float::before {
+            content: 'Fale Conosco';
+            position: absolute;
+            right: 80px;
+            background: #0b2b3b;
+            color: white;
+            padding: 0.5rem 1rem;
+            border-radius: 10px;
+            font-size: 0.9rem;
+            font-weight: 600;
+            white-space: nowrap;
+            opacity: 0;
+            transition: opacity 0.3s;
+            pointer-events: none;
+        }
+
+        .whatsapp-float:hover::before {
+            opacity: 1;
+        }
+
+        @keyframes pulse-wa {
+            0%, 100% {
+                box-shadow: 0 8px 25px rgba(37, 211, 102, 0.5), 0 0 0 0 rgba(37, 211, 102, 0.4);
+            }
+            50% {
+                box-shadow: 0 8px 25px rgba(37, 211, 102, 0.5), 0 0 0 15px rgba(37, 211, 102, 0);
+            }
+        }
+
+        .mapa-local {
+            padding: 1rem 2.5rem 2.8rem 2.5rem;
+            background: #ffffffd9;
+        }
+
+        .mapa-container {
+            background: #eef2f6;
+            border-radius: 2rem;
+            padding: 1.3rem;
+            box-shadow: inset 0 0 0 1px #ffffff, 0 10px 20px rgba(0,0,0,0.1);
+        }
+
+        .mapa-titulo {
+            display: flex;
+            align-items: center;
+            gap: 0.8rem;
+            font-size: 1.4rem;
+            font-weight: 600;
+            color: #0f3a4a;
+            margin-bottom: 1rem;
+        }
+        .mapa-titulo i {
+            font-size: 2rem;
+            color: #f5c542;
+        }
+
+        .mapa-frame {
+            width: 100%;
+            border-radius: 1.5rem;
+            overflow: hidden;
+            border: 3px solid white;
+            box-shadow: 0 8px 18px rgba(0,20,30,0.2);
+        }
+
+        .mapa-frame iframe {
+            display: block;
+            width: 100%;
+            height: 280px;
+            border: 0;
+        }
+
+        /* rodape sutil */
+        .footer-note {
+            background: #0b2b3b;
+            color: #b9d0da;
+            text-align: center;
+            padding: 1rem 2.5rem;
+            font-size: 0.95rem;
+            letter-spacing: 0.5px;
+            border-top: 1px solid #f5c54230;
+        }
+        .footer-note strong {
+            color: #f5c542;
+            font-weight: 600;
+        }
+
+        /* ajustes mobile */
+        @media (max-width: 750px) {
+            .hero {
+                flex-direction: column;
+                text-align: center;
+                padding: 1.8rem;
+            }
+            .brand h1 {
+                font-size: 2.5rem;
+            }
+            .brand h1 span { 
+                font-size: 1.3rem;
+            }
+            .info-grid { padding: 2rem 1.5rem; }
+            .mapa-local { padding: 0.5rem 1.5rem 2rem; }
+            .contact-item { padding: 1.5rem; }
+            .whatsapp-float {
+                width: 60px;
+                height: 60px;
+                bottom: 20px;
+                right: 20px;
+            }
+            .whatsapp-float i {
+                font-size: 2rem;
+            }
+            .whatsapp-float::before {
+                display: none;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- BOTÃO FLUTUANTE WHATSAPP -->
+    <a href="https://wa.me/5511913268620?text=Olá! Gostaria de mais informações sobre os serviços da MARLIFT." 
+       target="_blank" 
+       rel="noopener" 
+       class="whatsapp-float"
+       title="Fale conosco pelo WhatsApp">
+        <i class="fa-brands fa-whatsapp"></i>
+    </a>
+
+    <div class="contact-card">
+        <!-- HERO: título + imagem empilhadeira -->
+        <div class="hero">
+            <div class="brand">
+                <h1>MARLIFT <span>EMPILHADEIRAS</span></h1>
+                <p style="font-size: 1.6rem; margin-top: 0.8rem; color: #f0e6c5; display: flex; gap: 0.5rem; flex-wrap: wrap;">
+                    <i class="fa-solid fa-wrench" style="color: #f5c542;"></i> Manutenção em geral · 24h
+                </p>
+            </div>
+            <div class="empilhadeira-img">
+                <img src="https://iili.io/qNBzZOB.jpg" alt="Empilhadeira MARLIFT">
+            </div>
+        </div>
+
+        <!-- CARDS: WhatsApp / Email / Endereço -->
+        <div class="info-grid">
+            <!-- WhatsApp -->
+            <div class="contact-item">
+                <div class="icon-circle"><i class="fa-brands fa-whatsapp"></i></div>
+                <h3>WhatsApp</h3>
+                <a href="https://wa.me/5511913268620?text=Olá! Gostaria de mais informações sobre os serviços da MARLIFT." target="_blank" rel="noopener">
+                    <i class="fa-brands fa-whatsapp"></i> (11) 9 1326-8620
+                </a>
+                <span style="font-size: 0.95rem; color: #4f6f7a;">✔ atendimento rápido</span>
+            </div>
+            <!-- E-mail -->
+            <div class="contact-item">
+                <div class="icon-circle"><i class="fa-regular fa-envelope"></i></div>
+                <h3>E-mail</h3>
+                <a href="mailto:marlift.service@gmail.com">
+                    <i class="fa-regular fa-envelope"></i> marlift.service@gmail.com
+                </a>
+                <span style="font-size: 0.95rem; color: #4f6f7a;">orçamentos · suporte</span>
+            </div>
+            <!-- Endereço - ATUALIZADO -->
+            <div class="contact-item">
+                <div class="icon-circle"><i class="fa-regular fa-building"></i></div>
+                <h3>Endereço</h3>
+                <div class="endereco-bloco">
+                    <p><i class="fa-regular fa-map"></i> Rua Maria Fernanda N° 291</p>
+                    <p><i class="fa-regular fa-compass"></i> Chácaras Maria Inês</p>
+                    <p><i class="fa-regular fa-city"></i> Santana de Parnaíba - SP</p>
+                    <p><i class="fa-solid fa-location-dot"></i> CEP: 06.516-010</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- MAPA LOCALIZAÇÃO - ATUALIZADO -->
+        <div class="mapa-local">
+            <div class="mapa-container">
+                <div class="mapa-titulo">
+                    <i class="fa-regular fa-map"></i>
+                    <span>Onde estamos</span>
+                </div>
+                <div class="mapa-frame">
+                    <iframe 
+                        src="https://www.google.com/maps?q=Rua+Maria+Fernanda+291,+Chacaras+Maria+Ines,+Santana+de+Parnaiba+-+SP&z=17&output=embed" 
+                        allowfullscreen="" 
+                        loading="lazy" 
+                        referrerpolicy="no-referrer-when-downgrade"
+                        title="Localização MARLIFT Empilhadeira">
+                    </iframe>
+                </div>
+                <p style="margin-top: 0.7rem; color: #2f4a57; font-weight: 500;">
+                    <i class="fa-regular fa-circle-check" style="color:#f5c542;"></i> 
+                    Chácaras Maria Inês, Santana de Parnaíba – fácil acesso para carretas e empilhadeiras
+                </p>
+            </div>
+        </div>
+
+        <!-- rodape -->
+        <div class="footer-note">
+            <i class="fa-regular fa-clock" style="margin-right: 6px;"></i> Atendimento: 24h emergência · <strong>MARLIFT</strong> – sua empilhadeira sempre em movimento
+        </div>
+    </div>
+</body>
+</html>
