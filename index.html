@@ -90,6 +90,227 @@
             background: #2d4b5e;
         }
 
+        /* GALERIA DE EMPILHADEIRAS */
+        .gallery-section {
+            background: linear-gradient(180deg, #0b2b3b 0%, #0d3545 50%, #ffffffd9 100%);
+            padding: 2.5rem 2.5rem 3rem 2.5rem;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .gallery-section::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: radial-gradient(ellipse at 20% 50%, rgba(245, 197, 66, 0.1) 0%, transparent 50%),
+                        radial-gradient(ellipse at 80% 80%, rgba(245, 197, 66, 0.08) 0%, transparent 40%);
+            pointer-events: none;
+        }
+
+        .gallery-title {
+            text-align: center;
+            margin-bottom: 2rem;
+            position: relative;
+            z-index: 2;
+        }
+
+        .gallery-title h2 {
+            font-size: 2.2rem;
+            font-weight: 700;
+            color: #fff;
+            text-transform: uppercase;
+            letter-spacing: 3px;
+            display: inline-flex;
+            align-items: center;
+            gap: 1rem;
+        }
+
+        .gallery-title h2::before,
+        .gallery-title h2::after {
+            content: '';
+            width: 50px;
+            height: 3px;
+            background: linear-gradient(90deg, transparent, #f5c542, transparent);
+        }
+
+        .gallery-title p {
+            color: #f5c542;
+            font-size: 1.1rem;
+            margin-top: 0.5rem;
+            font-weight: 500;
+        }
+
+        .gallery-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 1.8rem;
+            position: relative;
+            z-index: 2;
+        }
+
+        .gallery-item {
+            position: relative;
+            border-radius: 1.5rem;
+            overflow: hidden;
+            aspect-ratio: 4/3;
+            cursor: pointer;
+            transform-style: preserve-3d;
+            perspective: 1000px;
+            opacity: 0;
+            transform: translateY(40px);
+            animation: fadeInUp 0.8s ease forwards;
+        }
+
+        .gallery-item:nth-child(1) { animation-delay: 0.1s; }
+        .gallery-item:nth-child(2) { animation-delay: 0.25s; }
+        .gallery-item:nth-child(3) { animation-delay: 0.4s; }
+
+        @keyframes fadeInUp {
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .gallery-item::before {
+            content: '';
+            position: absolute;
+            inset: 0;
+            background: linear-gradient(180deg, 
+                transparent 0%, 
+                transparent 40%, 
+                rgba(11, 43, 59, 0.7) 70%,
+                rgba(11, 43, 59, 0.95) 100%);
+            z-index: 1;
+            transition: all 0.4s ease;
+        }
+
+        .gallery-item::after {
+            content: '';
+            position: absolute;
+            inset: 0;
+            border: 3px solid transparent;
+            border-radius: 1.5rem;
+            transition: all 0.4s ease;
+            z-index: 3;
+            pointer-events: none;
+        }
+
+        .gallery-item:hover::after {
+            border-color: #f5c542;
+            box-shadow: inset 0 0 30px rgba(245, 197, 66, 0.3);
+        }
+
+        .gallery-item:hover::before {
+            background: linear-gradient(180deg, 
+                rgba(245, 197, 66, 0.1) 0%, 
+                transparent 30%,
+                rgba(11, 43, 59, 0.5) 60%,
+                rgba(11, 43, 59, 0.9) 100%);
+        }
+
+        .gallery-item img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.6s cubic-bezier(0.25, 0.46, 0.45, 0.94), filter 0.4s ease;
+            filter: brightness(0.9) contrast(1.05);
+        }
+
+        .gallery-item:hover img {
+            transform: scale(1.12);
+            filter: brightness(1.1) contrast(1.1);
+        }
+
+        .gallery-item .overlay {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            padding: 1.5rem;
+            z-index: 2;
+            transform: translateY(20px);
+            transition: transform 0.4s ease;
+        }
+
+        .gallery-item:hover .overlay {
+            transform: translateY(0);
+        }
+
+        .gallery-item .overlay h4 {
+            color: #f5c542;
+            font-size: 1.3rem;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            margin-bottom: 0.3rem;
+            text-shadow: 0 2px 10px rgba(0,0,0,0.5);
+        }
+
+        .gallery-item .overlay p {
+            color: #e0e8ec;
+            font-size: 0.95rem;
+            font-weight: 500;
+            opacity: 0;
+            transform: translateY(10px);
+            transition: all 0.4s ease 0.1s;
+        }
+
+        .gallery-item:hover .overlay p {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        .gallery-item .icon-badge {
+            position: absolute;
+            top: 1rem;
+            right: 1rem;
+            width: 45px;
+            height: 45px;
+            background: linear-gradient(135deg, #f5c542, #d4a530);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            z-index: 2;
+            box-shadow: 0 4px 15px rgba(245, 197, 66, 0.4);
+            opacity: 0;
+            transform: scale(0.5) rotate(-180deg);
+            transition: all 0.5s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+        }
+
+        .gallery-item:hover .icon-badge {
+            opacity: 1;
+            transform: scale(1) rotate(0deg);
+        }
+
+        .gallery-item .icon-badge i {
+            color: #0b2b3b;
+            font-size: 1.2rem;
+        }
+
+        .gallery-item .shine {
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 50%;
+            height: 100%;
+            background: linear-gradient(90deg, 
+                transparent, 
+                rgba(255,255,255,0.2), 
+                transparent);
+            z-index: 2;
+            transform: skewX(-25deg);
+            transition: left 0.8s ease;
+        }
+
+        .gallery-item:hover .shine {
+            left: 150%;
+        }
+
         /* grade de contatos */
         .info-grid {
             display: grid;
@@ -293,6 +514,17 @@
         }
 
         /* ajustes mobile */
+        @media (max-width: 900px) {
+            .gallery-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+            .gallery-item:nth-child(3) {
+                grid-column: span 2;
+                max-width: 400px;
+                margin: 0 auto;
+            }
+        }
+
         @media (max-width: 750px) {
             .hero {
                 flex-direction: column;
@@ -304,6 +536,32 @@
             }
             .brand h1 span { 
                 font-size: 1.3rem;
+            }
+            .gallery-section {
+                padding: 2rem 1.5rem 2.5rem;
+            }
+            .gallery-title h2 {
+                font-size: 1.4rem;
+                letter-spacing: 2px;
+            }
+            .gallery-title h2::before,
+            .gallery-title h2::after {
+                width: 30px;
+            }
+            .gallery-grid {
+                grid-template-columns: 1fr;
+                gap: 1.2rem;
+            }
+            .gallery-item:nth-child(3) {
+                grid-column: span 1;
+                max-width: none;
+            }
+            .gallery-item .overlay h4 {
+                font-size: 1.1rem;
+            }
+            .gallery-item .overlay p {
+                opacity: 1;
+                transform: translateY(0);
             }
             .info-grid { padding: 2rem 1.5rem; }
             .mapa-local { padding: 0.5rem 1.5rem 2rem; }
@@ -319,6 +577,27 @@
             }
             .whatsapp-float::before {
                 display: none;
+            }
+        }
+
+        /* Reduced motion */
+        @media (prefers-reduced-motion: reduce) {
+            .gallery-item {
+                animation: none;
+                opacity: 1;
+                transform: none;
+            }
+            .gallery-item img,
+            .gallery-item::before,
+            .gallery-item::after,
+            .gallery-item .overlay,
+            .gallery-item .overlay p,
+            .gallery-item .icon-badge,
+            .gallery-item .shine {
+                transition: none;
+            }
+            .whatsapp-float {
+                animation: none;
             }
         }
     </style>
@@ -347,6 +626,55 @@
             </div>
         </div>
 
+        <!-- GALERIA DE EMPILHADEIRAS -->
+        <section class="gallery-section">
+            <div class="gallery-title">
+                <h2>Nossos Servicos</h2>
+                <p>Equipamentos de alta performance para sua empresa</p>
+            </div>
+            
+            <div class="gallery-grid">
+                <!-- Imagem 1 -->
+                <div class="gallery-item">
+                    <div class="shine"></div>
+                    <img src="https://www.empilhadeiranova.com.br/imagens/thumbs/company-cc0cf73a2e243910ed0367776162f4fe.webp?w=600&h=450&fit=crop" alt="Empilhadeira Contrapeso">
+                    <div class="icon-badge">
+                        <i class="fa-solid fa-cogs"></i>
+                    </div>
+                    <div class="overlay">
+                        <h4>Contrapeso</h4>
+                        <p>Manutencao preventiva e corretiva</p>
+                    </div>
+                </div>
+
+                <!-- Imagem 2 -->
+                <div class="gallery-item">
+                    <div class="shine"></div>
+                    <img src="https://s.alicdn.com/@sc04/kf/Ha54e9efb2ffc4674aff7ab02e78179ddX.jpg?w=600&h=450&fit=crop" alt="Empilhadeira Elétrica">
+                    <div class="icon-badge">
+                        <i class="fa-solid fa-bolt"></i>
+                    </div>
+                    <div class="overlay">
+                        <h4>Eletrica</h4>
+                        <p>Baterias e sistemas eletricos</p>
+                    </div>
+                </div>
+
+                <!-- Imagem 3 -->
+                <div class="gallery-item">
+                    <div class="shine"></div>
+                    <img src="https://75a2562728.clvaw-cdnwnd.com/c38934498c5dfd7f80feeb1b9af1db44/system_preview_detail_200000009-bb96fbc93c/logos%20empilhadeiras.jpg?w=600&h=450&fit=crop" alt="Empilhadeira Patolada">
+                    <div class="icon-badge">
+                        <i class="fa-solid fa-arrows-up-down"></i>
+                    </div>
+                    <div class="overlay">
+                        <h4>Patolada</h4>
+                        <p>Especialistas em todos os modelos</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
         <!-- CARDS: WhatsApp / Email / Endereço -->
         <div class="info-grid">
             <!-- WhatsApp -->
@@ -356,7 +684,7 @@
                 <a href="https://wa.me/5511913268620?text=Olá! Gostaria de mais informações sobre os serviços da MARLIFT." target="_blank" rel="noopener">
                     <i class="fa-brands fa-whatsapp"></i> (11) 9 1326-8620
                 </a>
-                <span style="font-size: 0.95rem; color: #4f6f7a;">✔ atendimento rápido</span>
+                <span style="font-size: 0.95rem; color: #4f6f7a;">atendimento rapido</span>
             </div>
             <!-- E-mail -->
             <div class="contact-item">
@@ -365,22 +693,22 @@
                 <a href="mailto:marlift.service@gmail.com">
                     <i class="fa-regular fa-envelope"></i> marlift.service@gmail.com
                 </a>
-                <span style="font-size: 0.95rem; color: #4f6f7a;">orçamentos · suporte</span>
+                <span style="font-size: 0.95rem; color: #4f6f7a;">orcamentos - suporte</span>
             </div>
-            <!-- Endereço - ATUALIZADO -->
+            <!-- Endereço -->
             <div class="contact-item">
                 <div class="icon-circle"><i class="fa-regular fa-building"></i></div>
-                <h3>Endereço</h3>
+                <h3>Endereco</h3>
                 <div class="endereco-bloco">
-                    <p><i class="fa-regular fa-map"></i> Rua Maria Fernanda N° 291</p>
-                    <p><i class="fa-regular fa-compass"></i> Chácaras Maria Inês</p>
-                    <p><i class="fa-regular fa-city"></i> Santana de Parnaíba - SP</p>
+                    <p><i class="fa-regular fa-map"></i> Rua Maria Fernanda N 291</p>
+                    <p><i class="fa-regular fa-compass"></i> Chacaras Maria Ines</p>
+                    <p><i class="fa-regular fa-city"></i> Santana de Parnaiba - SP</p>
                     <p><i class="fa-solid fa-location-dot"></i> CEP: 06.516-010</p>
                 </div>
             </div>
         </div>
 
-        <!-- MAPA LOCALIZAÇÃO - ATUALIZADO -->
+        <!-- MAPA LOCALIZAÇÃO -->
         <div class="mapa-local">
             <div class="mapa-container">
                 <div class="mapa-titulo">
@@ -398,14 +726,14 @@
                 </div>
                 <p style="margin-top: 0.7rem; color: #2f4a57; font-weight: 500;">
                     <i class="fa-regular fa-circle-check" style="color:#f5c542;"></i> 
-                    Chácaras Maria Inês, Santana de Parnaíba – fácil acesso para carretas e empilhadeiras
+                    Chacaras Maria Ines, Santana de Parnaiba – facil acesso para carretas e empilhadeiras
                 </p>
             </div>
         </div>
 
         <!-- rodape -->
         <div class="footer-note">
-            <i class="fa-regular fa-clock" style="margin-right: 6px;"></i> Atendimento: 24h emergência · <strong>MARLIFT</strong> – sua empilhadeira sempre em movimento
+            <i class="fa-regular fa-clock" style="margin-right: 6px;"></i> Atendimento: 24h emergencia - <strong>MARLIFT</strong> – sua empilhadeira sempre em movimento
         </div>
     </div>
 </body>
