@@ -6,6 +6,8 @@
     <title>MARLIFT EMPILHADEIRA | Contato</title>
     <!-- Font Awesome 6 (Free) -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <!-- Google Fonts - Poppins -->
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;1,400;1,500;1,600;1,700;1,800&display=swap" rel="stylesheet">
     <style>
         * {
             margin: 0;
@@ -49,28 +51,79 @@
             border-bottom: 5px solid #f5c542;
         }
 
-        .brand h1 {
-            font-size: 6.2rem;
+        /* NOVA ESTILIZAÇÃO: Fonte Poppins, itálico e cores customizadas */
+        .brand {
+            font-family: 'Poppins', sans-serif;
+        }
+        .marlift-title {
+            font-family: 'Poppins', sans-serif;
+            font-style: italic;
             font-weight: 800;
+            font-size: 6.2rem;
             letter-spacing: -0.5px;
             line-height: 1.1;
             text-transform: uppercase;
-            background: linear-gradient(135deg, #fff8e0, #fcd34d);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-            background-clip: text;
-            text-shadow: 0 2px 5px rgba(0,0,0,0.3);
+            margin: 0;
+            display: inline-block;
         }
-
-        .brand h1 span {
+        /* Estilização individual para MAR e LIFT */
+        .mar-part {
+            color: #FF8C42;    /* Laranja vibrante */
+            text-shadow: 
+                -1px -1px 0 #FFFFFF,  
+                1px -1px 0 #FFFFFF,
+                -1px 1px 0 #FFFFFF,
+                1px 1px 0 #FFFFFF,
+                0 2px 5px rgba(0,0,0,0.3);  /* Sombra extra suave */
+        }
+        .lift-part {
+            color: #D3D9E0;    /* Cinza claro moderno */
+            text-shadow: 
+                -1px -1px 0 #FFFFFF,  
+                1px -1px 0 #FFFFFF,
+                -1px 1px 0 #FFFFFF,
+                1px 1px 0 #FFFFFF,
+                0 2px 5px rgba(0,0,0,0.3);
+        }
+        .subtitle-empilhadeiras {
+            font-family: 'Poppins', sans-serif;
+            font-style: italic;
+            font-weight: 700;
             font-size: 2.6rem;
             display: block;
-            font-weight: 500;
             letter-spacing: 2px;
-            color: #ffdb7c;
+            color: #000000;      /* Preto puro */
+            text-shadow: 
+                -1px -1px 0 #FF8C42,  
+                1px -1px 0 #FF8C42,
+                -1px 1px 0 #FF8C42,
+                1px 1px 0 #FF8C42;
             background: none;
-            -webkit-text-fill-color: #ffdb7c;
-            text-shadow: 0 2px 3px #00000050;
+            -webkit-text-fill-color: #000000;
+            margin-top: 0.2rem;
+        }
+        /* Ajuste responsivo para telas pequenas */
+        @media (max-width: 750px) {
+            .marlift-title {
+                font-size: 2.5rem;
+            }
+            .subtitle-empilhadeiras {
+                font-size: 1.3rem;
+                letter-spacing: 1px;
+            }
+            .hero {
+                flex-direction: column;
+                text-align: center;
+                padding: 1.8rem;
+            }
+        }
+        @media (max-width: 480px) {
+            .marlift-title {
+                font-size: 2.1rem;
+            }
+            .subtitle-empilhadeiras {
+                font-size: 1.1rem;
+            }
         }
 
         .empilhadeira-img {
@@ -531,10 +584,10 @@
                 text-align: center;
                 padding: 1.8rem;
             }
-            .brand h1 {
+            .marlift-title {
                 font-size: 2.5rem;
             }
-            .brand h1 span { 
+            .subtitle-empilhadeiras {
                 font-size: 1.3rem;
             }
             .gallery-section {
@@ -613,12 +666,16 @@
     </a>
 
     <div class="contact-card">
-        <!-- HERO: título + imagem empilhadeira -->
+        <!-- HERO: título com MARLIFT personalizado (MAR laranja + LIFT cinza claro + bordas brancas) e "Empilhadeiras" preto com borda laranja -->
         <div class="hero">
             <div class="brand">
-                <h1>MARLIFT <span>EMPILHADEIRAS</span></h1>
+                <!-- Texto principal com fonte Poppins, itálico, separação por spans -->
+                <div class="marlift-title">
+                    <span class="mar-part">MAR</span><span class="lift-part">LIFT</span>
+                </div>
+                <span class="subtitle-empilhadeiras">EMPILHADEIRAS</span>
                 <p style="font-size: 1.6rem; margin-top: 0.8rem; color: #f0e6c5; display: flex; gap: 0.5rem; flex-wrap: wrap;">
-                    <i class="fa-solid fa-wrench" style="color: #f5c542;"></i> Manutenção em geral · 24h
+                    <i class="fa-solid fa-wrench" style="color: #f5c542;"></i> Manutenção em geral · 24hs
                 </p>
             </div>
             <div class="empilhadeira-img">
@@ -629,7 +686,7 @@
         <!-- GALERIA DE EMPILHADEIRAS -->
         <section class="gallery-section">
             <div class="gallery-title">
-                <h2>Nossos Servicos</h2>
+                <h2>Nossos Serviços</h2>
                 <p>Equipamentos de alta performance para sua empresa</p>
             </div>
             
@@ -643,7 +700,7 @@
                     </div>
                     <div class="overlay">
                         <h4>Empilhadeiras</h4>
-                        <p>Manutencao preventiva e corretiva</p>
+                        <p>Manutenção preventiva e corretiva</p>
                     </div>
                 </div>
 
@@ -656,7 +713,7 @@
                     </div>
                     <div class="overlay">
                         <h4>Peças</h4>
-                        <p>Baterias e sistemas eletricos</p>
+                        <p>Baterias e sistemas elétricos</p>
                     </div>
                 </div>
 
@@ -684,23 +741,23 @@
                 <a href="https://wa.me/5511913268620?text=Olá! Gostaria de mais informações sobre os serviços da MARLIFT." target="_blank" rel="noopener">
                     <i class="fa-brands fa-whatsapp"></i> (11) 9 1326-8620
                 </a>
-                <span style="font-size: 0.95rem; color: #4f6f7a;">atendimento rapido</span>
+                <span style="font-size: 0.95rem; color: #4f6f7a;">atendimento rápido</span>
             </div>
             <!-- E-mail -->
             <div class="contact-item">
                 <div class="icon-circle"><i class="fa-regular fa-envelope"></i></div>
                 <h3>E-mail</h3>
-                <a href="mailto:contato@marlift.com.br">
-                    <i class="fa-regular fa-envelope"></i> contato@marlift.com.br
+                <a href="mailto:contaro@marlift.com.br">
+                    <i class="fa-regular fa-envelope"></i> contato@marlif.com.br
                 </a>
-                <span style="font-size: 0.95rem; color: #4f6f7a;">orcamentos - suporte</span>
+                <span style="font-size: 0.95rem; color: #4f6f7a;">orçamentos - suporte</span>
             </div>
             <!-- Endereço -->
             <div class="contact-item">
                 <div class="icon-circle"><i class="fa-regular fa-building"></i></div>
-                <h3>Endereco</h3>
+                <h3>Endereço</h3>
                 <div class="endereco-bloco">
-                    <p><i class="fa-regular fa-map"></i> Rua Maria Fernanda N°279</p>
+                    <p><i class="fa-regular fa-map"></i> Rua Maria Fernanda N 279</p>
                     <p><i class="fa-regular fa-compass"></i> Chacaras Maria Ines</p>
                     <p><i class="fa-regular fa-city"></i> Santana de Parnaiba - SP</p>
                     <p><i class="fa-solid fa-location-dot"></i> CEP: 06.516-010</p>
@@ -726,14 +783,14 @@
                 </div>
                 <p style="margin-top: 0.7rem; color: #2f4a57; font-weight: 500;">
                     <i class="fa-regular fa-circle-check" style="color:#f5c542;"></i> 
-                    Chacaras Maria Ines, Santana de Parnaiba – facil acesso para caminhões e empilhadeiras
+                    Chacaras Maria Ines, Santana de Parnaiba – fácil acesso para caminhões e empilhadeiras
                 </p>
             </div>
         </div>
 
         <!-- rodape -->
         <div class="footer-note">
-            <i class="fa-regular fa-clock" style="margin-right: 6px;"></i> Atendimento: 24h emergencia - <strong>MARLIFT</strong> – sua empilhadeira sempre em movimento
+            <i class="fa-regular fa-clock" style="margin-right: 6px;"></i> Atendimento: 24hs emergência - <strong>MARLIFT</strong> – sua empilhadeira sempre em movimento
         </div>
     </div>
 </body>
