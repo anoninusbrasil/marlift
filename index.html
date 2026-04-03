@@ -2,281 +2,204 @@
 <html lang="pt-BR">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>MARLIFT EMPILHADEIRAS | Manutenção em geral</title>
-    <link rel="icon" href="vetor.ico" type="image/x-icon">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes, viewport-fit=cover">
+    <title>MARLIFT EMPILHADEIRAS | Manutenção Especializada 24h</title>
+    <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='%23E65C1E'%3E%3Cpath d='M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5'/%3E%3C/svg%3E" type="image/svg+xml">
     <!-- Font Awesome 6 (Free) -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
-    <!-- Google Fonts - Poppins -->
+    <!-- Google Fonts - Poppins (estilo moderno) -->
     <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;1,400;1,500;1,600;1,700;1,800&display=swap" rel="stylesheet">
     <style>
         * {
             margin: 0;
             padding: 0;
             box-sizing: border-box;
-            font-family: 'Segoe UI', Roboto, system-ui, sans-serif;
+            font-family: 'Poppins', 'Segoe UI', system-ui, sans-serif;
         }
 
         body {
-            background: linear-gradient(145deg, #f3f6fb 0%, #e9eef4 100%);
+            /* degradê otimizado para mobile sem extremos de brilho */
+            background: linear-gradient(145deg, #0a0a0a 0%, #2c1a0b 55%, #e65c1e 100%);
             min-height: 100vh;
             display: flex;
             align-items: center;
             justify-content: center;
-            padding: 2rem 1.5rem;
+            padding: 1rem;
         }
 
         .contact-card {
             max-width: 1300px;
             width: 100%;
-            background: rgba(255,255,255,0.75);
-            backdrop-filter: blur(10px);
-            -webkit-backdrop-filter: blur(10px);
-            border-radius: 3rem 3rem 2rem 2rem;
-            box-shadow: 0 30px 50px rgba(0, 20, 30, 0.2), 0 10px 20px rgba(0,0,0,0.1);
+            background: rgba(20, 12, 8, 0.8);
+            backdrop-filter: blur(12px);
+            -webkit-backdrop-filter: blur(12px);
+            border-radius: 2rem;
+            box-shadow: 0 25px 45px rgba(0, 0, 0, 0.5), 0 0 0 1px rgba(230, 92, 30, 0.4);
             overflow: hidden;
-            border: 1px solid rgba(255,255,255,0.5);
+            border: 1px solid rgba(255, 140, 66, 0.4);
+            transition: all 0.2s ease;
         }
 
-        /* cabeçalho com imagem e titulo */
+        /* cabeçalho com melhor responsividade */
         .hero {
-            background: #0b2b3b;
-            background-image: radial-gradient(circle at 30% 40%, rgba(255,215,0,0.15) 0%, transparent 40%);
-            padding: 2.5rem 2.5rem 1.8rem 2.5rem;
+            background: #0f0b07;
+            background-image: radial-gradient(circle at 30% 40%, rgba(230, 92, 30, 0.2) 0%, transparent 60%);
+            padding: 1.8rem 1.5rem 1.5rem 1.5rem;
             color: white;
             display: flex;
             flex-wrap: wrap;
             align-items: center;
             justify-content: space-between;
-            gap: 2rem;
-            border-bottom: 5px solid #f5c542;
+            gap: 1.5rem;
+            border-bottom: 4px solid #E65C1E;
         }
 
-        /* NOVA ESTILIZAÇÃO: Fonte Poppins, itálico e cores customizadas */
         .brand {
-            font-family: 'Poppins', sans-serif;
+            flex: 1;
+            min-width: 180px;
         }
+
         .marlift-title {
             font-family: 'Poppins', sans-serif;
-            font-style: italic;
             font-weight: 800;
-            font-size: 6.2rem;
+            font-size: clamp(2.4rem, 8vw, 6rem);
             letter-spacing: -0.5px;
             line-height: 1.1;
             text-transform: uppercase;
-            margin: 0;
             display: inline-block;
         }
-        /* Estilização individual para MAR e LIFT */
+
         .mar-part {
-            color: #FF8C42;    /* Laranja vibrante */
-            text-shadow: 
-                -1px -1px 0 #FFFFFF,  
-                1px -1px 0 #FFFFFF,
-                -1px 1px 0 #FFFFFF,
-                1px 1px 0 #FFFFFF,
-                0 2px 5px rgba(0,0,0,0.3);  /* Sombra extra suave */
+            color: #FF8C42;
+            text-shadow: -1px -1px 0 #FFFFFF, 1px -1px 0 #FFFFFF, -1px 1px 0 #FFFFFF, 1px 1px 0 #FFFFFF, 0 2px 6px rgba(0,0,0,0.5);
         }
+
         .lift-part {
-            color: #D3D9E0;    /* Cinza claro moderno */
-            text-shadow: 
-                -1px -1px 0 #FFFFFF,  
-                1px -1px 0 #FFFFFF,
-                -1px 1px 0 #FFFFFF,
-                1px 1px 0 #FFFFFF,
-                0 2px 5px rgba(0,0,0,0.3);
+            color: #F0EDE5;
+            text-shadow: -1px -1px 0 #FF8C42, 1px -1px 0 #FF8C42, -1px 1px 0 #FF8C42, 1px 1px 0 #FF8C42, 0 2px 5px rgba(0,0,0,0.4);
         }
+
         .subtitle-empilhadeiras {
             font-family: 'Poppins', sans-serif;
-            font-style: italic;
-            font-weight: 700;
-            font-size: 2.6rem;
+            font-weight: 800;
+            font-size: clamp(1.1rem, 5vw, 2.4rem);
             display: block;
             letter-spacing: 2px;
-            color: #000000;      /* Preto puro */
-            text-shadow: 
-                -1px -1px 0 #FF8C42,  
-                1px -1px 0 #FF8C42,
-                -1px 1px 0 #FF8C42,
-                1px 1px 0 #FF8C42;
-            background: none;
-            -webkit-text-fill-color: #000000;
+            color: #000000;
+            text-shadow: -1px -1px 0 #FF8C42, 1px -1px 0 #FF8C42, -1px 1px 0 #FF8C42, 1px 1px 0 #FF8C42;
             margin-top: 0.2rem;
         }
-        /* Ajuste responsivo para telas pequenas */
-        @media (max-width: 750px) {
-            .marlift-title {
-                font-size: 2.5rem;
-            }
-            .subtitle-empilhadeiras {
-                font-size: 1.3rem;
-                letter-spacing: 1px;
-            }
-            .hero {
-                flex-direction: column;
-                text-align: center;
-                padding: 1.8rem;
-            }
-        }
-        @media (max-width: 480px) {
-            .marlift-title {
-                font-size: 2.1rem;
-            }
-            .subtitle-empilhadeiras {
-                font-size: 1.1rem;
-            }
+
+        .hero p {
+            font-size: clamp(1rem, 4vw, 1.6rem);
+            margin-top: 0.6rem;
+            flex-wrap: wrap;
         }
 
         .empilhadeira-img {
-            max-width: 380px;
+            max-width: 280px;
             width: 100%;
-            filter: drop-shadow(0 10px 15px #00000050);
+            filter: drop-shadow(0 8px 16px #00000070);
         }
 
         .empilhadeira-img img {
             width: 100%;
             height: auto;
             display: block;
-            border-radius: 20px 20px 20px 20px;
-            border: 3px solid #f5c542;
+            border-radius: 20px;
+            border: 2px solid #E65C1E;
             object-fit: cover;
             aspect-ratio: 16/9;
-            background: #2d4b5e;
+            background: #2b1b0f;
         }
 
-        /* GALERIA DE EMPILHADEIRAS */
+        /* GALERIA MOBILE FIRST com grid adaptativo */
         .gallery-section {
-            background: linear-gradient(180deg, #0b2b3b 0%, #0d3545 50%, #ffffffd9 100%);
-            padding: 2.5rem 2.5rem 3rem 2.5rem;
+            background: linear-gradient(180deg, #0a0603 0%, #1e130b 40%, #fef7e0 100%);
+            padding: 2rem 1rem 2.5rem 1rem;
             position: relative;
-            overflow: hidden;
-        }
-
-        .gallery-section::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            right: 0;
-            bottom: 0;
-            background: radial-gradient(ellipse at 20% 50%, rgba(245, 197, 66, 0.1) 0%, transparent 50%),
-                        radial-gradient(ellipse at 80% 80%, rgba(245, 197, 66, 0.08) 0%, transparent 40%);
-            pointer-events: none;
-        }
-
-        .gallery-title {
-            text-align: center;
-            margin-bottom: 2rem;
-            position: relative;
-            z-index: 2;
         }
 
         .gallery-title h2 {
-            font-size: 2.2rem;
-            font-weight: 700;
-            color: #fff;
+            font-size: clamp(1.5rem, 6vw, 2.2rem);
+            font-weight: 800;
+            color: #FF8C42;
             text-transform: uppercase;
-            letter-spacing: 3px;
+            letter-spacing: 2px;
             display: inline-flex;
             align-items: center;
-            gap: 1rem;
+            gap: 0.5rem;
+            text-shadow: 0 2px 5px rgba(0,0,0,0.4);
+            flex-wrap: wrap;
+            justify-content: center;
         }
 
         .gallery-title h2::before,
         .gallery-title h2::after {
             content: '';
-            width: 50px;
-            height: 3px;
-            background: linear-gradient(90deg, transparent, #f5c542, transparent);
+            width: 30px;
+            height: 2px;
+            background: linear-gradient(90deg, transparent, #E65C1E, transparent);
         }
 
         .gallery-title p {
-            color: #f5c542;
-            font-size: 1.1rem;
-            margin-top: 0.5rem;
+            color: #f0c48b;
+            font-size: 0.9rem;
             font-weight: 500;
+            padding: 0 0.5rem;
         }
 
         .gallery-grid {
             display: grid;
-            grid-template-columns: repeat(3, 1fr);
-            gap: 1.8rem;
+            grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+            gap: 1.2rem;
             position: relative;
             z-index: 2;
         }
 
         .gallery-item {
-            position: relative;
-            border-radius: 1.5rem;
+            border-radius: 1.3rem;
             overflow: hidden;
             aspect-ratio: 4/3;
             cursor: pointer;
-            transform-style: preserve-3d;
-            perspective: 1000px;
             opacity: 0;
-            transform: translateY(40px);
-            animation: fadeInUp 0.8s ease forwards;
+            transform: translateY(30px);
+            animation: fadeInUp 0.7s ease forwards;
+            box-shadow: 0 12px 20px -6px rgba(0,0,0,0.5);
+            transition: transform 0.2s ease;
         }
 
-        .gallery-item:nth-child(1) { animation-delay: 0.1s; }
-        .gallery-item:nth-child(2) { animation-delay: 0.25s; }
-        .gallery-item:nth-child(3) { animation-delay: 0.4s; }
+        .gallery-item:active {
+            transform: scale(0.98);
+        }
 
         @keyframes fadeInUp {
-            to {
-                opacity: 1;
-                transform: translateY(0);
-            }
+            to { opacity: 1; transform: translateY(0); }
         }
 
         .gallery-item::before {
             content: '';
             position: absolute;
             inset: 0;
-            background: linear-gradient(180deg, 
-                transparent 0%, 
-                transparent 40%, 
-                rgba(11, 43, 59, 0.7) 70%,
-                rgba(11, 43, 59, 0.95) 100%);
+            background: linear-gradient(180deg, transparent 0%, transparent 40%, rgba(0,0,0,0.5) 70%, rgba(0,0,0,0.85) 100%);
             z-index: 1;
-            transition: all 0.4s ease;
-        }
-
-        .gallery-item::after {
-            content: '';
-            position: absolute;
-            inset: 0;
-            border: 3px solid transparent;
-            border-radius: 1.5rem;
-            transition: all 0.4s ease;
-            z-index: 3;
-            pointer-events: none;
-        }
-
-        .gallery-item:hover::after {
-            border-color: #f5c542;
-            box-shadow: inset 0 0 30px rgba(245, 197, 66, 0.3);
+            transition: all 0.3s;
         }
 
         .gallery-item:hover::before {
-            background: linear-gradient(180deg, 
-                rgba(245, 197, 66, 0.1) 0%, 
-                transparent 30%,
-                rgba(11, 43, 59, 0.5) 60%,
-                rgba(11, 43, 59, 0.9) 100%);
+            background: linear-gradient(180deg, rgba(230,92,30,0.15) 0%, transparent 35%, rgba(0,0,0,0.5) 65%, rgba(0,0,0,0.85) 100%);
         }
 
         .gallery-item img {
             width: 100%;
             height: 100%;
             object-fit: cover;
-            transition: transform 0.6s cubic-bezier(0.25, 0.46, 0.45, 0.94), filter 0.4s ease;
-            filter: brightness(0.9) contrast(1.05);
+            transition: transform 0.4s cubic-bezier(0.2, 0.9, 0.4, 1.1);
+            filter: brightness(0.92) contrast(1.05);
         }
 
         .gallery-item:hover img {
-            transform: scale(1.12);
-            filter: brightness(1.1) contrast(1.1);
+            transform: scale(1.08);
         }
 
         .gallery-item .overlay {
@@ -284,10 +207,10 @@
             bottom: 0;
             left: 0;
             right: 0;
-            padding: 1.5rem;
+            padding: 0.8rem 1rem;
             z-index: 2;
-            transform: translateY(20px);
-            transition: transform 0.4s ease;
+            transform: translateY(8px);
+            transition: transform 0.3s ease;
         }
 
         .gallery-item:hover .overlay {
@@ -295,22 +218,21 @@
         }
 
         .gallery-item .overlay h4 {
-            color: #f5c542;
-            font-size: 1.3rem;
-            font-weight: 700;
+            color: #FF8C42;
+            font-size: clamp(1rem, 4vw, 1.3rem);
+            font-weight: 800;
             text-transform: uppercase;
             letter-spacing: 1px;
-            margin-bottom: 0.3rem;
-            text-shadow: 0 2px 10px rgba(0,0,0,0.5);
+            text-shadow: 0 1px 3px black;
         }
 
         .gallery-item .overlay p {
-            color: #e0e8ec;
-            font-size: 0.95rem;
+            color: #FFF2E0;
+            font-size: 0.75rem;
             font-weight: 500;
             opacity: 0;
-            transform: translateY(10px);
-            transition: all 0.4s ease 0.1s;
+            transform: translateY(8px);
+            transition: all 0.25s ease;
         }
 
         .gallery-item:hover .overlay p {
@@ -318,563 +240,415 @@
             transform: translateY(0);
         }
 
-        .gallery-item .icon-badge {
+        .icon-badge {
             position: absolute;
-            top: 1rem;
-            right: 1rem;
-            width: 45px;
-            height: 45px;
-            background: linear-gradient(135deg, #f5c542, #d4a530);
+            top: 0.7rem;
+            right: 0.7rem;
+            width: 34px;
+            height: 34px;
+            background: linear-gradient(135deg, #E65C1E, #b03d0f);
             border-radius: 50%;
             display: flex;
             align-items: center;
             justify-content: center;
             z-index: 2;
-            box-shadow: 0 4px 15px rgba(245, 197, 66, 0.4);
+            box-shadow: 0 3px 8px rgba(0,0,0,0.4);
             opacity: 0;
-            transform: scale(0.5) rotate(-180deg);
-            transition: all 0.5s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+            transform: scale(0.5);
+            transition: all 0.3s cubic-bezier(0.34, 1.2, 0.64, 1);
         }
 
         .gallery-item:hover .icon-badge {
             opacity: 1;
-            transform: scale(1) rotate(0deg);
+            transform: scale(1);
         }
 
-        .gallery-item .icon-badge i {
-            color: #0b2b3b;
-            font-size: 1.2rem;
+        .icon-badge i {
+            color: #0a0603;
+            font-size: 1rem;
         }
 
-        .gallery-item .shine {
-            position: absolute;
-            top: 0;
-            left: -100%;
-            width: 50%;
-            height: 100%;
-            background: linear-gradient(90deg, 
-                transparent, 
-                rgba(255,255,255,0.2), 
-                transparent);
-            z-index: 2;
-            transform: skewX(-25deg);
-            transition: left 0.8s ease;
-        }
-
-        .gallery-item:hover .shine {
-            left: 150%;
-        }
-
-        /* ========== NOVA SEÇÃO MULTIMARCAS COM CARROSSEL INFINITO ========== */
+        /* Multimarcas com rolagem suave e sem corte em mobile */
         .multibrands {
-            background: #0f3a4a;
-            background: linear-gradient(135deg, #0b2b3b 0%, #124c5e 100%);
-            padding: 2.5rem 2rem 2.8rem 2rem;
-            position: relative;
-            z-index: 2;
-            border-top: 2px solid #f5c54280;
-            border-bottom: 2px solid #f5c54280;
-        }
-
-        .brands-header {
-            text-align: center;
-            margin-bottom: 2rem;
+            background: linear-gradient(135deg, #0c0704 0%, #261a10 100%);
+            padding: 1.8rem 1rem;
+            border-top: 2px solid #E65C1E;
+            border-bottom: 2px solid #E65C1E;
         }
 
         .brands-header h3 {
-            font-size: 2.2rem;
+            font-size: clamp(1.5rem, 6vw, 2.2rem);
             font-weight: 800;
             color: #FF8C42;
-            letter-spacing: 2px;
-            text-transform: uppercase;
-            font-family: 'Poppins', sans-serif;
-            text-shadow: 0 2px 5px rgba(0,0,0,0.3);
         }
 
         .brands-header p {
-            color: #f5f5f0;
-            font-size: 1.2rem;
-            font-weight: 500;
-            margin-top: 0.5rem;
-            font-family: 'Poppins', sans-serif;
+            color: #FADBAB;
+            font-size: 0.9rem;
         }
 
-        /* Container do slider infinito */
         .brands-slider {
-            overflow: hidden;
+            overflow-x: auto;
             position: relative;
             width: 100%;
             padding: 1rem 0;
+            scrollbar-width: thin;
+            scrollbar-color: #E65C1E #2c1a0b;
+            -webkit-overflow-scrolling: touch;
+        }
+
+        .brands-slider::-webkit-scrollbar {
+            height: 4px;
+        }
+
+        .brands-slider::-webkit-scrollbar-track {
+            background: #2c1a0b;
+            border-radius: 10px;
+        }
+
+        .brands-slider::-webkit-scrollbar-thumb {
+            background: #E65C1E;
+            border-radius: 10px;
         }
 
         .brands-track {
             display: flex;
             align-items: center;
-            gap: 3rem;
-            animation: scrollBrands 28s linear infinite;
+            gap: 1rem;
             width: max-content;
+            padding: 0 0.2rem;
         }
 
-        /* cada bloco de marca */
         .brand-item {
             display: flex;
             flex-direction: column;
             align-items: center;
             justify-content: center;
-            background: rgba(255,255,255,0.08);
-            backdrop-filter: blur(4px);
-            border-radius: 2rem;
-            padding: 0.8rem 1.8rem;
-            min-width: 140px;
-            transition: all 0.3s ease;
-            border: 1px solid rgba(245,197,66,0.3);
-            box-shadow: 0 5px 12px rgba(0,0,0,0.2);
+            background: rgba(0,0,0,0.65);
+            backdrop-filter: blur(3px);
+            border-radius: 1.8rem;
+            padding: 0.5rem 1.2rem;
+            min-width: 100px;
+            transition: all 0.2s;
+            border: 1px solid rgba(230,92,30,0.6);
         }
 
         .brand-item i {
-            font-size: 2.6rem;
-            color: #f5c542;
-            margin-bottom: 0.5rem;
-            filter: drop-shadow(0 2px 4px rgba(0,0,0,0.3));
+            font-size: 1.6rem;
+            color: #FF8C42;
+            margin-bottom: 0.2rem;
         }
 
         .brand-item span {
-            font-size: 1.2rem;
+            font-size: 0.85rem;
             font-weight: 700;
-            letter-spacing: 1px;
-            color: #fff;
-            font-family: 'Poppins', sans-serif;
-            text-transform: uppercase;
+            color: #fce3c2;
+            white-space: nowrap;
         }
 
-        .brand-item:hover {
-            background: rgba(245,197,66,0.2);
-            transform: scale(1.05);
-            border-color: #f5c542;
-            transition: 0.2s;
+        .brand-item:active {
+            transform: scale(0.96);
+            background: rgba(230,92,30,0.5);
         }
 
-        /* animação da direita para esquerda (movimento contínuo) */
-        @keyframes scrollBrands {
-            0% {
-                transform: translateX(0);
-            }
-            100% {
-                transform: translateX(-50%);
-            }
-        }
-
-        /* duplicamos as marcas para efeito infinito sem gaps */
-        /* grade de contatos */
+        /* CARDS DE CONTATO mobile ajustado */
         .info-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-            gap: 2rem;
-            padding: 2.8rem 2.5rem 2rem 2.5rem;
-            background: #ffffffd9;
-            backdrop-filter: blur(4px);
+            grid-template-columns: 1fr;
+            gap: 1.2rem;
+            padding: 1.8rem 1rem;
+            background: rgba(0,0,0,0.55);
         }
 
         .contact-item {
             display: flex;
             flex-direction: column;
             align-items: flex-start;
-            gap: 0.7rem;
-            background: white;
-            padding: 1.8rem 1.5rem;
-            border-radius: 2rem;
-            box-shadow: 0 10px 25px -10px rgba(0,40,50,0.2);
-            transition: transform 0.2s ease, box-shadow 0.3s;
-            border: 1px solid rgba(245, 197, 66, 0.2);
+            gap: 0.4rem;
+            background: #1f160fe6;
+            padding: 1.2rem;
+            border-radius: 1.6rem;
+            box-shadow: 0 10px 18px -6px black;
+            transition: transform 0.2s, box-shadow 0.2s;
+            border: 1px solid rgba(230,92,30,0.4);
         }
 
-        .contact-item:hover {
-            transform: translateY(-6px);
-            box-shadow: 0 25px 30px -12px #f5c54280;
-            border-color: #f5c542;
+        .contact-item:active {
+            transform: translateY(-3px);
+            box-shadow: 0 14px 22px -8px #E65C1E;
         }
 
         .icon-circle {
-            background: #0b2b3b;
-            width: 60px;
-            height: 60px;
+            background: #0a0603;
+            width: 48px;
+            height: 48px;
             border-radius: 50%;
             display: flex;
             align-items: center;
             justify-content: center;
-            font-size: 2rem;
-            color: #f5c542;
-            border: 2px solid #f5c542;
-            margin-bottom: 0.2rem;
+            font-size: 1.6rem;
+            color: #FF8C42;
+            border: 2px solid #E65C1E;
         }
 
         .contact-item h3 {
-            font-size: 1.5rem;
+            font-size: 1.3rem;
             font-weight: 700;
-            color: #0f3a4a;
-            letter-spacing: -0.3px;
+            color: #FFB47B;
         }
 
         .contact-item a, .contact-item p {
-            font-size: 1.2rem;
+            font-size: 0.95rem;
             text-decoration: none;
-            color: #1e2f3b;
+            color: #f0e2d4;
             font-weight: 500;
             word-break: break-word;
-            display: flex;
-            align-items: center;
-            gap: 0.6rem;
-            transition: color 0.2s;
         }
 
         .contact-item a i {
-            color: #f5c542;
-            font-size: 1.4rem;
-            width: 24px;
+            color: #FF8C42;
+            margin-right: 0.3rem;
         }
 
-        .contact-item a:hover {
-            color: #b87c10;
-        }
-
-        .endereco-bloco {
-            display: flex;
-            flex-direction: column;
-            gap: 0.3rem;
-        }
-        .endereco-bloco i {
-            color: #f5c542;
-            font-size: 1.3rem;
-            margin-right: 0.5rem;
-            width: 28px;
-        }
         .endereco-bloco p {
-            display: flex;
-            align-items: center;
+            font-size: 0.9rem;
+            margin: 0.2rem 0;
         }
 
-        /* BOTÃO FLUTUANTE WHATSAPP */
+        /* MAPA */
+        .mapa-local {
+            padding: 0.8rem 1rem 1.8rem 1rem;
+            background: rgba(0,0,0,0.4);
+        }
+
+        .mapa-container {
+            background: #211810;
+            border-radius: 1.6rem;
+            padding: 1rem;
+        }
+
+        .mapa-titulo {
+            font-size: 1.2rem;
+            font-weight: 700;
+            color: #FFB47B;
+            margin-bottom: 0.8rem;
+            gap: 0.5rem;
+        }
+
+        .mapa-frame {
+            border-radius: 1.2rem;
+            overflow: hidden;
+            border: 2px solid #E65C1E;
+        }
+
+        .mapa-frame iframe {
+            width: 100%;
+            height: 220px;
+            border: 0;
+        }
+
+        .footer-note {
+            background: #0a0603;
+            color: #e9cba7;
+            text-align: center;
+            padding: 0.9rem;
+            font-size: 0.75rem;
+            border-top: 1px solid #E65C1E;
+        }
+
+        /* WHATSAPP FLUTUANTE mobile otimizado */
         .whatsapp-float {
             position: fixed;
-            bottom: 30px;
-            right: 30px;
-            width: 70px;
-            height: 70px;
+            bottom: 20px;
+            right: 16px;
+            width: 56px;
+            height: 56px;
             background: linear-gradient(135deg, #25D366 0%, #128C7E 100%);
             border-radius: 50%;
             display: flex;
             align-items: center;
             justify-content: center;
-            box-shadow: 0 8px 25px rgba(37, 211, 102, 0.5);
+            box-shadow: 0 6px 18px rgba(37, 211, 102, 0.45);
             z-index: 1000;
             text-decoration: none;
-            transition: transform 0.3s ease, box-shadow 0.3s ease;
-            animation: pulse-wa 2s infinite;
+            transition: transform 0.2s ease;
+            animation: pulse-wa 1.8s infinite;
         }
 
-        .whatsapp-float:hover {
-            transform: scale(1.1);
-            box-shadow: 0 12px 35px rgba(37, 211, 102, 0.7);
+        .whatsapp-float:active {
+            transform: scale(0.92);
         }
 
         .whatsapp-float i {
             color: white;
-            font-size: 2.5rem;
-        }
-
-        .whatsapp-float::before {
-            content: 'Fale Conosco';
-            position: absolute;
-            right: 80px;
-            background: #0b2b3b;
-            color: white;
-            padding: 0.5rem 1rem;
-            border-radius: 10px;
-            font-size: 0.9rem;
-            font-weight: 600;
-            white-space: nowrap;
-            opacity: 0;
-            transition: opacity 0.3s;
-            pointer-events: none;
-        }
-
-        .whatsapp-float:hover::before {
-            opacity: 1;
+            font-size: 1.9rem;
         }
 
         @keyframes pulse-wa {
-            0%, 100% {
-                box-shadow: 0 8px 25px rgba(37, 211, 102, 0.5), 0 0 0 0 rgba(37, 211, 102, 0.4);
+            0%, 100% { box-shadow: 0 6px 18px rgba(37, 211, 102, 0.5), 0 0 0 0 rgba(37, 211, 102, 0.4); }
+            50% { box-shadow: 0 6px 18px rgba(37, 211, 102, 0.6), 0 0 0 10px rgba(37, 211, 102, 0); }
+        }
+
+        /* ajustes de toque e acessibilidade */
+        @media (min-width: 768px) {
+            .info-grid {
+                grid-template-columns: repeat(3, 1fr);
+                gap: 1.8rem;
+                padding: 2rem 2rem;
             }
-            50% {
-                box-shadow: 0 8px 25px rgba(37, 211, 102, 0.5), 0 0 0 15px rgba(37, 211, 102, 0);
-            }
-        }
-
-        .mapa-local {
-            padding: 1rem 2.5rem 2.8rem 2.5rem;
-            background: #ffffffd9;
-        }
-
-        .mapa-container {
-            background: #eef2f6;
-            border-radius: 2rem;
-            padding: 1.3rem;
-            box-shadow: inset 0 0 0 1px #ffffff, 0 10px 20px rgba(0,0,0,0.1);
-        }
-
-        .mapa-titulo {
-            display: flex;
-            align-items: center;
-            gap: 0.8rem;
-            font-size: 1.4rem;
-            font-weight: 600;
-            color: #0f3a4a;
-            margin-bottom: 1rem;
-        }
-        .mapa-titulo i {
-            font-size: 2rem;
-            color: #f5c542;
-        }
-
-        .mapa-frame {
-            width: 100%;
-            border-radius: 1.5rem;
-            overflow: hidden;
-            border: 3px solid white;
-            box-shadow: 0 8px 18px rgba(0,20,30,0.2);
-        }
-
-        .mapa-frame iframe {
-            display: block;
-            width: 100%;
-            height: 280px;
-            border: 0;
-        }
-
-        /* rodape sutil */
-        .footer-note {
-            background: #0b2b3b;
-            color: #b9d0da;
-            text-align: center;
-            padding: 1rem 2.5rem;
-            font-size: 0.95rem;
-            letter-spacing: 0.5px;
-            border-top: 1px solid #f5c54230;
-        }
-        .footer-note strong {
-            color: #f5c542;
-            font-weight: 600;
-        }
-
-        /* ajustes mobile */
-        @media (max-width: 900px) {
             .gallery-grid {
-                grid-template-columns: repeat(2, 1fr);
+                gap: 1.5rem;
             }
-            .gallery-item:nth-child(3) {
-                grid-column: span 2;
-                max-width: 400px;
-                margin: 0 auto;
-            }
-        }
-
-        @media (max-width: 750px) {
             .hero {
-                flex-direction: column;
-                text-align: center;
-                padding: 1.8rem;
-            }
-            .marlift-title {
-                font-size: 2.5rem;
-            }
-            .subtitle-empilhadeiras {
-                font-size: 1.3rem;
+                padding: 2rem 2rem;
             }
             .gallery-section {
-                padding: 2rem 1.5rem 2.5rem;
+                padding: 2rem 2rem 2.5rem;
             }
-            .gallery-title h2 {
-                font-size: 1.4rem;
-                letter-spacing: 2px;
+            .multibrands {
+                padding: 2rem;
             }
-            .gallery-title h2::before,
-            .gallery-title h2::after {
-                width: 30px;
-            }
-            .gallery-grid {
-                grid-template-columns: 1fr;
-                gap: 1.2rem;
-            }
-            .gallery-item:nth-child(3) {
-                grid-column: span 1;
-                max-width: none;
-            }
-            .gallery-item .overlay h4 {
-                font-size: 1.1rem;
-            }
-            .gallery-item .overlay p {
-                opacity: 1;
-                transform: translateY(0);
-            }
-            .brands-header h3 {
-                font-size: 1.6rem;
-            }
-            .brand-item {
-                min-width: 110px;
-                padding: 0.5rem 1rem;
-            }
-            .brand-item i {
-                font-size: 1.8rem;
-            }
-            .brand-item span {
-                font-size: 0.9rem;
+            .mapa-local {
+                padding: 1rem 2rem 2rem;
             }
             .brands-track {
                 gap: 1.8rem;
             }
-            .info-grid { padding: 2rem 1.5rem; }
-            .mapa-local { padding: 0.5rem 1.5rem 2rem; }
-            .contact-item { padding: 1.5rem; }
+            .brand-item {
+                min-width: 120px;
+                padding: 0.6rem 1.4rem;
+            }
+            .brand-item span {
+                font-size: 1rem;
+            }
             .whatsapp-float {
-                width: 60px;
-                height: 60px;
-                bottom: 20px;
-                right: 20px;
+                width: 68px;
+                height: 68px;
+                bottom: 30px;
+                right: 30px;
             }
             .whatsapp-float i {
-                font-size: 2rem;
-            }
-            .whatsapp-float::before {
-                display: none;
+                font-size: 2.3rem;
             }
         }
 
-        @media (max-width: 480px) {
-            .brand-item {
-                min-width: 90px;
+        @media (max-width: 420px) {
+            .gallery-item .overlay h4 {
+                font-size: 0.9rem;
             }
-            .brands-track {
-                gap: 1.2rem;
+            .contact-item h3 {
+                font-size: 1.1rem;
+            }
+            .icon-circle {
+                width: 42px;
+                height: 42px;
+                font-size: 1.3rem;
+            }
+            .empilhadeira-img {
+                max-width: 220px;
+                margin: 0 auto;
+            }
+            .hero {
+                text-align: center;
+            }
+            .brand {
+                text-align: center;
             }
         }
 
-        /* Reduced motion */
+        /* redução de animação para quem prefere */
         @media (prefers-reduced-motion: reduce) {
             .gallery-item {
                 animation: none;
                 opacity: 1;
                 transform: none;
             }
-            .gallery-item img,
-            .gallery-item::before,
-            .gallery-item::after,
-            .gallery-item .overlay,
-            .gallery-item .overlay p,
-            .gallery-item .icon-badge,
-            .gallery-item .shine {
-                transition: none;
-            }
             .whatsapp-float {
                 animation: none;
             }
-            .brands-track {
-                animation: none;
-                transform: translateX(0);
-                flex-wrap: wrap;
-                justify-content: center;
-            }
-            .brands-slider {
-                overflow-x: auto;
+            .gallery-item:hover img {
+                transform: none;
             }
         }
     </style>
 </head>
 <body>
-    <!-- BOTÃO FLUTUANTE WHATSAPP -->
+    <!-- Botão WhatsApp Flutuante melhorado para mobile -->
     <a href="https://wa.me/5511913268620?text=Olá! Gostaria de mais informações sobre os serviços da MARLIFT." 
-       target="_blank" 
-       rel="noopener" 
-       class="whatsapp-float"
-       title="Fale conosco pelo WhatsApp">
+       target="_blank" class="whatsapp-float" title="Fale conosco pelo WhatsApp" rel="noopener noreferrer">
         <i class="fa-brands fa-whatsapp"></i>
     </a>
 
     <div class="contact-card">
-        <!-- HERO: título com MARLIFT personalizado -->
         <div class="hero">
             <div class="brand">
                 <div class="marlift-title">
                     <span class="mar-part">MAR</span><span class="lift-part">LIFT</span>
                 </div>
                 <span class="subtitle-empilhadeiras">EMPILHADEIRAS</span>
-                <p style="font-size: 1.6rem; margin-top: 0.8rem; color: #f0e6c5; display: flex; gap: 0.5rem; flex-wrap: wrap;">
-                    <i class="fa-solid fa-wrench" style="color: #f5c542;"></i> Manutenção em geral · 24h
+                <p style="display: flex; gap: 0.4rem; flex-wrap: wrap; justify-content: center;">
+                    <i class="fa-solid fa-wrench" style="color: #E65C1E;"></i> Manutenção geral · 24h
                 </p>
             </div>
             <div class="empilhadeira-img">
-                <img src="https://iili.io/qNBzZOB.jpg" alt="Empilhadeira MARLIFT">
+                <img src="https://iili.io/qNBzZOB.jpg" alt="Empilhadeira MARLIFT" loading="lazy">
             </div>
         </div>
 
-        <!-- GALERIA DE EMPILHADEIRAS -->
+        <!-- GALERIA DE SERVIÇOS com todas as imagens responsivas -->
         <section class="gallery-section">
             <div class="gallery-title">
                 <h2>Nossos Serviços</h2>
-                <p>Equipamentos de alta performance para sua empresa</p>
+                <p>Equipamentos, peças genuínas e soluções completas</p>
             </div>
-            
             <div class="gallery-grid">
-                <!-- Imagem 1 -->
+                <!-- 1 - Empilhadeiras -->
                 <div class="gallery-item">
-                    <div class="shine"></div>
-                    <img src="/Emp.png?w=600&h=450&fit=crop" alt="Empilhadeira Contrapeso">
-                    <div class="icon-badge">
-                        <i class="fa-solid fa-cogs"></i>
-                    </div>
-                    <div class="overlay">
-                        <h4>Empilhadeiras</h4>
-                        <p>Manutenção preventiva e corretiva</p>
-                    </div>
+                    <img src="https://www.zanettiempilhadeiras.com.br/wp-content/uploads/2016/10/Empilhadeira-Toyota-8FG-1.8-a-3-1024x748.jpg?w=600&h=450&fit=crop" alt="Empilhadeira" loading="lazy">
+                    <div class="icon-badge"><i class="fa-solid fa-cogs"></i></div>
+                    <div class="overlay"><h4>Empilhadeiras</h4><p>Manutenção preventiva e corretiva</p></div>
                 </div>
-
-                <!-- Imagem 2 -->
+                <!-- 2 - Peças elétricas -->
                 <div class="gallery-item">
-                    <div class="shine"></div>
-                    <img src="/logos_empilhadeiras.png?w=600&h=450&fit=crop" alt="Empilhadeira Elétrica">
-                    <div class="icon-badge">
-                        <i class="fa-solid fa-bolt"></i>
-                    </div>
-                    <div class="overlay">
-                        <h4>Peças</h4>
-                        <p>Baterias e sistemas elétricos</p>
-                    </div>
+                    <img src="https://empilhadeiras.eletracempilhadeiras.com.br/imagens/pecas-para-empilhadeira-eletrica-still.jpg?w=600&h=450&fit=crop" alt="Sistema Elétrico" loading="lazy">
+                    <div class="icon-badge"><i class="fa-solid fa-bolt"></i></div>
+                    <div class="overlay"><h4>Sistema Elétrico</h4><p>Baterias, motores e controle</p></div>
                 </div>
-
-                <!-- Imagem 3 -->
+                <!-- 3 - Multimarcas -->
                 <div class="gallery-item">
-                    <div class="shine"></div>
-                    <img src="/IMG-20260331-WA0054.jpg?w=600&h=450&fit=crop" alt="Empilhadeira Patolada">
-                    <div class="icon-badge">
-                        <i class="fa-solid fa-arrows-up-down"></i>
-                    </div>
-                    <div class="overlay">
-                        <h4>Multimarcas</h4>
-                        <p>Especialistas em diversos modelos</p>
-                    </div>
+                    <img src="https://st2.depositphotos.com/1001877/5525/i/450/depositphotos_55251599-stock-photo-forklift-truck-with-boxes-on.jpg?w=600&h=450&fit=crop" alt="Multimarcas" loading="lazy">
+                    <div class="icon-badge"><i class="fa-solid fa-arrows-up-down"></i></div>
+                    <div class="overlay"><h4>Multimarcas</h4><p>Especialistas em diversos modelos</p></div>
+                </div>
+                <!-- 4 - Peças Originais -->
+                <div class="gallery-item">
+                    <img src="https://guaraempilhadeiras.com.br/wp-content/uploads/2023/08/pecas-para-transmissao-empilhadeira.jpg?w=600&h=450&fit=crop" alt="Peças e Componentes" loading="lazy">
+                    <div class="icon-badge"><i class="fa-solid fa-microchip"></i></div>
+                    <div class="overlay"><h4>Peças Originais</h4><p>Filtros, freios, cilindros e mais</p></div>
+                </div>
+                <!-- 5 - Kit Gás GLP -->
+                <div class="gallery-item">
+                    <img src="https://http2.mlstatic.com/D_NQ_NP_996636-MLB89020902879_072025-O.webp?w=600&h=450&fit=crop" alt="Kit Gás GLP" loading="lazy">
+                    <div class="icon-badge"><i class="fa-solid fa-fire-flame-curved"></i></div>
+                    <div class="overlay"><h4>Kit Gás / GLP</h4><p>Conversão e manutenção de sistemas a gás</p></div>
+                </div>
+                <!-- 6 - Inspeção Completa -->
+                <div class="gallery-item">
+                    <img src="https://iili.io/BoF5S2t.jpg?w=600&h=450&fit=crop" alt="Sistema hidráulico e gás" loading="lazy">
+                    <div class="icon-badge"><i class="fa-solid fa-industry"></i></div>
+                    <div class="overlay"><h4>Inspeção Completa</h4><p>Válvulas, mangueiras, segurança GLP</p></div>
                 </div>
             </div>
         </section>
 
-        <!-- NOVA SEÇÃO MULTIMARCAS COM MOVIMENTO DA DIREITA PARA ESQUERDA -->
+        <!-- MULTIMARCAS com rolagem horizontal suave (touch friendly) -->
         <div class="multibrands">
-            <div class="brands-header">
+            <div class="brands-header" style="text-align: center;">
                 <h3>MULTIMARCAS</h3>
-                <p>Trabalhamos com as principais marcas do mercado mundial</p>
+                <p>As maiores marcas do segmento mundial</p>
             </div>
             <div class="brands-slider">
                 <div class="brands-track">
-                    <!-- primeira iteração das marcas (lista completa) -->
                     <div class="brand-item"><i class="fa-solid fa-industry"></i><span>TOYOTA</span></div>
                     <div class="brand-item"><i class="fa-solid fa-truck-moving"></i><span>HYSTER</span></div>
                     <div class="brand-item"><i class="fa-solid fa-cubes"></i><span>YALE</span></div>
@@ -882,7 +656,6 @@
                     <div class="brand-item"><i class="fa-solid fa-bolt"></i><span>LINDE</span></div>
                     <div class="brand-item"><i class="fa-solid fa-crown"></i><span>CROWN</span></div>
                     <div class="brand-item"><i class="fa-solid fa-car"></i><span>HYUNDAI</span></div>
-                    <!-- repetição para dar continuidade infinita e evitar gaps -->
                     <div class="brand-item"><i class="fa-solid fa-industry"></i><span>TOYOTA</span></div>
                     <div class="brand-item"><i class="fa-solid fa-truck-moving"></i><span>HYSTER</span></div>
                     <div class="brand-item"><i class="fa-solid fa-cubes"></i><span>YALE</span></div>
@@ -894,27 +667,22 @@
             </div>
         </div>
 
-        <!-- CARDS: WhatsApp / Email / Endereço -->
+        <!-- CONTATO INFO com espaçamento melhor -->
         <div class="info-grid">
-            <!-- WhatsApp -->
             <div class="contact-item">
                 <div class="icon-circle"><i class="fa-brands fa-whatsapp"></i></div>
                 <h3>WhatsApp</h3>
-                <a href="https://wa.me/5511913268620?text=Olá! Gostaria de mais informações sobre os serviços da MARLIFT." target="_blank" rel="noopener">
+                <a href="https://wa.me/5511913268620?text=Olá! Gostaria de mais informações sobre os serviços da MARLIFT." target="_blank" rel="noopener noreferrer">
                     <i class="fa-brands fa-whatsapp"></i> (11) 9 1326-8620
                 </a>
-                <span style="font-size: 0.95rem; color: #4f6f7a;">atendimento rápido</span>
+                <span style="font-size: 0.7rem; color: #e6bc8c;">atendimento 24h emergência</span>
             </div>
-            <!-- E-mail -->
             <div class="contact-item">
                 <div class="icon-circle"><i class="fa-regular fa-envelope"></i></div>
                 <h3>E-mail</h3>
-                <a href="mailto:contato@marfit.com.br">
-                    <i class="fa-regular fa-envelope"></i> contato@marfit.com.br
-                </a>
-                <span style="font-size: 0.95rem; color: #4f6f7a;">orçamentos - suporte</span>
+                <a href="mailto:contato@marfit.com.br"><i class="fa-regular fa-envelope"></i> contato@marfit.com.br</a>
+                <span style="font-size: 0.7rem; color: #e6bc8c;">orçamentos e suporte técnico</span>
             </div>
-            <!-- Endereço -->
             <div class="contact-item">
                 <div class="icon-circle"><i class="fa-regular fa-building"></i></div>
                 <h3>Endereço</h3>
@@ -927,32 +695,28 @@
             </div>
         </div>
 
-        <!-- MAPA LOCALIZAÇÃO -->
+        <!-- MAPA LOCALIZAÇÃO com iframe adaptado -->
         <div class="mapa-local">
             <div class="mapa-container">
                 <div class="mapa-titulo">
                     <i class="fa-regular fa-map"></i>
-                    <span>Onde estamos</span>
+                    <span>Onde estamos - fácil acesso</span>
                 </div>
                 <div class="mapa-frame">
                     <iframe 
                         src="https://www.google.com/maps?q=Rua+Maria+Fernanda+279,+Chacaras+Maria+Ines,+Santana+de+Parnaiba+-+SP&z=17&output=embed" 
-                        allowfullscreen="" 
-                        loading="lazy" 
-                        referrerpolicy="no-referrer-when-downgrade"
-                        title="Localização MARLIFT Empilhadeiras">
+                        allowfullscreen="" loading="lazy" title="Localização MARLIFT">
                     </iframe>
                 </div>
-                <p style="margin-top: 0.7rem; color: #2f4a57; font-weight: 500;">
-                    <i class="fa-regular fa-circle-check" style="color:#f5c542;"></i> 
-                    Chacaras Maria Ines, Santana de Parnaiba – fácil acesso para caminhões e empilhadeiras
+                <p style="margin-top: 0.7rem; color: #FFCFA5; font-weight: 500; font-size: 0.8rem;">
+                    <i class="fa-regular fa-circle-check" style="color:#E65C1E;"></i> 
+                    Chacaras Maria Ines, Santana de Parnaíba – estrutura para atender sua frota
                 </p>
             </div>
         </div>
 
-        <!-- rodape -->
         <div class="footer-note">
-            <i class="fa-regular fa-clock" style="margin-right: 6px;"></i> Atendimento: 24h emergência - <strong>MARLIFT</strong> – sua empilhadeira sempre em movimento
+            <i class="fa-regular fa-clock"></i> Atendimento 24h emergência | <strong>MARLIFT</strong> – Manutenção em geral, peças e kit gás para empilhadeiras
         </div>
     </div>
 </body>
