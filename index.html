@@ -75,7 +75,7 @@
 
         /* Container do banner WhatsApp - tamanho reduzido */
         .empilhadeira-img {
-            max-width: 260px;   /* reduzido */
+            max-width: 260px;
             width: 100%;
             min-width: 200px;
             transition: all 0.2s;
@@ -88,18 +88,18 @@
             align-items: center;
             justify-content: center;
             text-decoration: none;
-            background: rgba(0, 0, 0, 0.55);  /* fundo semi-transparente escuro */
+            background: rgba(0, 0, 0, 0.55);
             backdrop-filter: blur(8px);
             -webkit-backdrop-filter: blur(8px);
             border-radius: 28px;
             padding: 0.8rem 0.6rem;
             gap: 0.5rem;
             transition: transform 0.2s ease, box-shadow 0.2s ease;
-            border: 2px solid #FF8C42;  /* borda laranja */
+            border: 2px solid #FF8C42;
             box-shadow: 0 8px 18px -6px rgba(0,0,0,0.4);
             text-align: center;
             width: 100%;
-            min-height: auto;  /* altura automática */
+            min-height: auto;
         }
 
         .wa-emergency-banner:hover {
@@ -124,7 +124,7 @@
 
         .banner-title-wrapper i {
             font-size: 1.4rem;
-            color: #25D366;  /* ícone verde WhatsApp */
+            color: #25D366;
             filter: drop-shadow(0 1px 2px rgba(0,0,0,0.3));
         }
 
@@ -134,7 +134,7 @@
             letter-spacing: 1px;
             background: transparent;
             padding: 0;
-            color: #FF8C42;  /* laranja */
+            color: #FF8C42;
             text-shadow: 0 1px 2px rgba(0,0,0,0.5);
         }
 
@@ -151,7 +151,7 @@
             padding: 0.4rem 1rem;
             border-radius: 50px;
             font-weight: 800;
-            font-size: 1rem;  /* aumentado */
+            font-size: 1rem;
             display: inline-flex;
             align-items: center;
             gap: 8px;
@@ -164,9 +164,9 @@
             font-size: 1rem;
         }
 
-        /* Badge "Plantão 24hs • Chame agora" aumentado */
+        /* BADGE "Plantão 24hs • Chame agora" com EFEITO PISCANTE (blink/pulse) */
         .banner-badge {
-            font-size: 0.75rem;  /* aumentado */
+            font-size: 0.75rem;
             background: #E65C1E;
             padding: 0.25rem 0.9rem;
             border-radius: 20px;
@@ -175,13 +175,40 @@
             align-items: center;
             gap: 0.4rem;
             letter-spacing: 0.5px;
+            /* Efeito de atenção: pulso contínuo */
+            animation: attentionBlink 1.2s ease-in-out infinite;
+            transform-origin: center;
+            transition: box-shadow 0.1s;
         }
 
-        .banner-badge i {
-            font-size: 0.7rem;
+        /* Keyframes do efeito "piscando" - combinação de cor, brilho e leve escala para máxima atenção */
+        @keyframes attentionBlink {
+            0% {
+                background-color: #E65C1E;
+                box-shadow: 0 0 0 0 rgba(230, 92, 30, 0.7), 0 0 0 0 rgba(255, 140, 66, 0.4);
+                transform: scale(1);
+            }
+            50% {
+                background-color: #FF7A2E;
+                box-shadow: 0 0 0 5px rgba(230, 92, 30, 0.5), 0 0 8px 2px #FF8C42;
+                transform: scale(1.03);
+                text-shadow: 0 0 3px rgba(255,255,200,0.8);
+            }
+            100% {
+                background-color: #E65C1E;
+                box-shadow: 0 0 0 0 rgba(230, 92, 30, 0.7), 0 0 0 0 rgba(255, 140, 66, 0.4);
+                transform: scale(1);
+            }
         }
 
-        /* Galeria e demais seções mantidas iguais (apenas ajustes de responsividade) */
+        /* Para usuários que preferem redução de movimento, desabilita a animação */
+        @media (prefers-reduced-motion: reduce) {
+            .banner-badge {
+                animation: none;
+            }
+        }
+
+        /* Galeria e demais seções mantidas */
         .gallery-section {
             background: linear-gradient(180deg, #0a0603 0%, #1e130b 40%, #fef7e0 100%);
             padding: 2rem 1rem 2.5rem 1rem;
@@ -647,6 +674,7 @@
             }
             .banner-badge {
                 font-size: 0.7rem;
+                padding: 0.2rem 0.7rem;
             }
         }
 
@@ -672,6 +700,9 @@
                 overflow-x: auto;
                 mask-image: none;
             }
+            .banner-badge {
+                animation: none; /* remove o efeito piscante se usuário pedir menos movimento */
+            }
         }
     </style>
 </head>
@@ -689,7 +720,7 @@
                 </div>
             </div>
             
-            <!-- BANNER WHATSAPP REFORMULADO: fundo transparente, tamanho reduzido, ícone alinhado, textos maiores -->
+            <!-- BANNER WHATSAPP REFORMULADO: fundo transparente, tamanho reduzido, com BADGE PISCANTE -->
             <div class="empilhadeira-img">
                 <a href="https://wa.me/5511913268620?text=🚨%20EMERGÊNCIA%20MARLIFT%20-%20Preciso%20de%20atendimento%20 *URGENTE* %20para%20minha%20empilhadeira!%20(Chamado%2024hs)" 
                    target="_blank" rel="noopener noreferrer" class="wa-emergency-banner">
@@ -705,6 +736,7 @@
                         <i class="fa-brands fa-whatsapp"></i> (11) 9 1326-8620
                     </div>
                     
+                    <!-- BADGE COM EFEITO PISCANTE (ATENÇÃO) -->
                     <div class="banner-badge">
                         <i class="fa-regular fa-clock"></i> Plantão 24hs • Chame agora
                     </div>
