@@ -7,7 +7,7 @@
     <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='%23E65C1E'%3E%3Cpath d='M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5'/%3E%3C/svg%3E" type="image/svg+xml">
     <!-- Font Awesome 6 (Free) -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
-    <!-- Google Fonts - Poppins (estilo moderno) -->
+    <!-- Google Fonts - Poppins -->
     <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;1,400;1,500;1,600;1,700;1,800&display=swap" rel="stylesheet">
     <style>
         * {
@@ -18,7 +18,6 @@
         }
 
         body {
-            /* degradê otimizado para mobile sem extremos de brilho */
             background: linear-gradient(145deg, #0a0a0a 0%, #2c1a0b 55%, #e65c1e 100%);
             min-height: 100vh;
             display: flex;
@@ -40,11 +39,10 @@
             transition: all 0.2s ease;
         }
 
-        /* cabeçalho com melhor responsividade */
         .hero {
             background: #0f0b07;
             background-image: radial-gradient(circle at 30% 40%, rgba(230, 92, 30, 0.2) 0%, transparent 60%);
-            padding: 1.8rem 1.5rem 1.5rem 1.5rem;
+            padding: 1.5rem 1.5rem;
             color: white;
             display: flex;
             flex-wrap: wrap;
@@ -57,67 +55,142 @@
         .brand {
             flex: 1;
             min-width: 180px;
+            display: flex;
+            justify-content: flex-start;
         }
 
-        .marlift-title {
-            font-family: 'Poppins', sans-serif;
-            font-weight: 800;
-            font-size: clamp(2.4rem, 8vw, 6rem);
-            letter-spacing: -0.5px;
-            line-height: 1.1;
-            text-transform: uppercase;
-            display: inline-block;
-        }
-
-        .mar-part {
-            color: #FF8C42;
-            text-shadow: -1px -1px 0 #FFFFFF, 1px -1px 0 #FFFFFF, -1px 1px 0 #FFFFFF, 1px 1px 0 #FFFFFF, 0 2px 6px rgba(0,0,0,0.5);
-        }
-
-        .lift-part {
-            color: #F0EDE5;
-            text-shadow: -1px -1px 0 #FF8C42, 1px -1px 0 #FF8C42, -1px 1px 0 #FF8C42, 1px 1px 0 #FF8C42, 0 2px 5px rgba(0,0,0,0.4);
-        }
-
-        .subtitle-empilhadeiras {
-            font-family: 'Poppins', sans-serif;
-            font-weight: 800;
-            font-size: clamp(1.1rem, 5vw, 2.4rem);
-            display: block;
-            letter-spacing: 2px;
-            color: #000000;
-            text-shadow: -1px -1px 0 #FF8C42, 1px -1px 0 #FF8C42, -1px 1px 0 #FF8C42, 1px 1px 0 #FF8C42;
-            margin-top: 0.2rem;
-        }
-
-        .hero p {
-            font-size: clamp(1rem, 4vw, 1.6rem);
-            margin-top: 0.6rem;
-            flex-wrap: wrap;
-        }
-
-        .empilhadeira-img {
-            max-width: 280px;
+        .logo-principal {
+            max-width: 480px;
             width: 100%;
-            filter: drop-shadow(0 8px 16px #00000070);
+            transition: transform 0.2s;
         }
 
-        .empilhadeira-img img {
+        .logo-principal img {
             width: 100%;
             height: auto;
             display: block;
-            border-radius: 20px;
-            border: 2px solid #E65C1E;
-            object-fit: cover;
-            aspect-ratio: 16/9;
-            background: #2b1b0f;
+            filter: drop-shadow(0 6px 12px rgba(0,0,0,0.5));
+            border-radius: 16px;
         }
 
-        /* GALERIA MOBILE FIRST com grid adaptativo */
+        /* Container do banner WhatsApp - tamanho reduzido */
+        .empilhadeira-img {
+            max-width: 260px;   /* reduzido */
+            width: 100%;
+            min-width: 200px;
+            transition: all 0.2s;
+        }
+
+        /* Banner com fundo transparente (glassmorphism) e borda laranja */
+        .wa-emergency-banner {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            text-decoration: none;
+            background: rgba(0, 0, 0, 0.55);  /* fundo semi-transparente escuro */
+            backdrop-filter: blur(8px);
+            -webkit-backdrop-filter: blur(8px);
+            border-radius: 28px;
+            padding: 0.8rem 0.6rem;
+            gap: 0.5rem;
+            transition: transform 0.2s ease, box-shadow 0.2s ease;
+            border: 2px solid #FF8C42;  /* borda laranja */
+            box-shadow: 0 8px 18px -6px rgba(0,0,0,0.4);
+            text-align: center;
+            width: 100%;
+            min-height: auto;  /* altura automática */
+        }
+
+        .wa-emergency-banner:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 14px 22px -8px rgba(230,92,30,0.5);
+            background: rgba(0, 0, 0, 0.7);
+            border-color: #E65C1E;
+        }
+
+        .wa-emergency-banner:active {
+            transform: scale(0.97);
+        }
+
+        /* Linha do título com ícone e texto laranja alinhados */
+        .banner-title-wrapper {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 0.5rem;
+            flex-wrap: wrap;
+        }
+
+        .banner-title-wrapper i {
+            font-size: 1.4rem;
+            color: #25D366;  /* ícone verde WhatsApp */
+            filter: drop-shadow(0 1px 2px rgba(0,0,0,0.3));
+        }
+
+        .banner-title {
+            font-weight: 800;
+            font-size: 1.1rem;
+            letter-spacing: 1px;
+            background: transparent;
+            padding: 0;
+            color: #FF8C42;  /* laranja */
+            text-shadow: 0 1px 2px rgba(0,0,0,0.5);
+        }
+
+        .banner-sub {
+            font-size: 0.7rem;
+            font-weight: 500;
+            opacity: 0.95;
+            color: #FFE0B5;
+        }
+
+        /* Telefone aumentado */
+        .banner-phone {
+            background: rgba(10, 47, 40, 0.8);
+            padding: 0.4rem 1rem;
+            border-radius: 50px;
+            font-weight: 800;
+            font-size: 1rem;  /* aumentado */
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            color: #FFE0A3;
+            border: 1px solid #FFB347;
+            margin-top: 0.2rem;
+        }
+
+        .banner-phone i {
+            font-size: 1rem;
+        }
+
+        /* Badge "Plantão 24hs • Chame agora" aumentado */
+        .banner-badge {
+            font-size: 0.75rem;  /* aumentado */
+            background: #E65C1E;
+            padding: 0.25rem 0.9rem;
+            border-radius: 20px;
+            font-weight: 700;
+            display: inline-flex;
+            align-items: center;
+            gap: 0.4rem;
+            letter-spacing: 0.5px;
+        }
+
+        .banner-badge i {
+            font-size: 0.7rem;
+        }
+
+        /* Galeria e demais seções mantidas iguais (apenas ajustes de responsividade) */
         .gallery-section {
             background: linear-gradient(180deg, #0a0603 0%, #1e130b 40%, #fef7e0 100%);
             padding: 2rem 1rem 2.5rem 1rem;
             position: relative;
+        }
+
+        .gallery-title {
+            text-align: center;
+            margin-bottom: 1.8rem;
         }
 
         .gallery-title h2 {
@@ -144,9 +217,11 @@
 
         .gallery-title p {
             color: #f0c48b;
-            font-size: 0.9rem;
+            font-size: 1rem;
             font-weight: 500;
-            padding: 0 0.5rem;
+            max-width: 90%;
+            margin: 0.5rem auto 0;
+            text-align: center;
         }
 
         .gallery-grid {
@@ -167,6 +242,7 @@
             animation: fadeInUp 0.7s ease forwards;
             box-shadow: 0 12px 20px -6px rgba(0,0,0,0.5);
             transition: transform 0.2s ease;
+            position: relative;
         }
 
         .gallery-item:active {
@@ -268,55 +344,57 @@
             font-size: 1rem;
         }
 
-        /* Multimarcas com rolagem suave e sem corte em mobile */
         .multibrands {
             background: linear-gradient(135deg, #0c0704 0%, #261a10 100%);
             padding: 1.8rem 1rem;
             border-top: 2px solid #E65C1E;
             border-bottom: 2px solid #E65C1E;
+            overflow: hidden;
+            position: relative;
+        }
+
+        .brands-header {
+            text-align: center;
+            margin-bottom: 1.5rem;
         }
 
         .brands-header h3 {
             font-size: clamp(1.5rem, 6vw, 2.2rem);
             font-weight: 800;
             color: #FF8C42;
+            margin-bottom: 0.2rem;
         }
 
         .brands-header p {
             color: #FADBAB;
             font-size: 0.9rem;
+            font-weight: 500;
         }
 
         .brands-slider {
-            overflow-x: auto;
             position: relative;
             width: 100%;
-            padding: 1rem 0;
-            scrollbar-width: thin;
-            scrollbar-color: #E65C1E #2c1a0b;
-            -webkit-overflow-scrolling: touch;
-        }
-
-        .brands-slider::-webkit-scrollbar {
-            height: 4px;
-        }
-
-        .brands-slider::-webkit-scrollbar-track {
-            background: #2c1a0b;
-            border-radius: 10px;
-        }
-
-        .brands-slider::-webkit-scrollbar-thumb {
-            background: #E65C1E;
-            border-radius: 10px;
+            overflow: hidden;
+            mask-image: linear-gradient(to right, transparent, black 5%, black 95%, transparent);
+            -webkit-mask-image: linear-gradient(to right, transparent, black 5%, black 95%, transparent);
         }
 
         .brands-track {
             display: flex;
             align-items: center;
-            gap: 1rem;
+            gap: 1.5rem;
             width: max-content;
-            padding: 0 0.2rem;
+            animation: scrollLeft 25s linear infinite;
+            will-change: transform;
+        }
+
+        @keyframes scrollLeft {
+            0% { transform: translateX(0); }
+            100% { transform: translateX(-50%); }
+        }
+
+        .brands-slider:hover .brands-track {
+            animation-play-state: paused;
         }
 
         .brand-item {
@@ -327,16 +405,17 @@
             background: rgba(0,0,0,0.65);
             backdrop-filter: blur(3px);
             border-radius: 1.8rem;
-            padding: 0.5rem 1.2rem;
-            min-width: 100px;
+            padding: 0.6rem 1.4rem;
+            min-width: 110px;
             transition: all 0.2s;
             border: 1px solid rgba(230,92,30,0.6);
+            cursor: default;
         }
 
         .brand-item i {
             font-size: 1.6rem;
             color: #FF8C42;
-            margin-bottom: 0.2rem;
+            margin-bottom: 0.3rem;
         }
 
         .brand-item span {
@@ -351,7 +430,6 @@
             background: rgba(230,92,30,0.5);
         }
 
-        /* CARDS DE CONTATO mobile ajustado */
         .info-grid {
             display: grid;
             grid-template-columns: 1fr;
@@ -415,7 +493,6 @@
             margin: 0.2rem 0;
         }
 
-        /* MAPA */
         .mapa-local {
             padding: 0.8rem 1rem 1.8rem 1rem;
             background: rgba(0,0,0,0.4);
@@ -456,7 +533,6 @@
             border-top: 1px solid #E65C1E;
         }
 
-        /* WHATSAPP FLUTUANTE mobile otimizado */
         .whatsapp-float {
             position: fixed;
             bottom: 20px;
@@ -489,7 +565,7 @@
             50% { box-shadow: 0 6px 18px rgba(37, 211, 102, 0.6), 0 0 0 10px rgba(37, 211, 102, 0); }
         }
 
-        /* ajustes de toque e acessibilidade */
+        /* Responsividade */
         @media (min-width: 768px) {
             .info-grid {
                 grid-template-columns: repeat(3, 1fr);
@@ -511,12 +587,9 @@
             .mapa-local {
                 padding: 1rem 2rem 2rem;
             }
-            .brands-track {
-                gap: 1.8rem;
-            }
             .brand-item {
                 min-width: 120px;
-                padding: 0.6rem 1.4rem;
+                padding: 0.7rem 1.5rem;
             }
             .brand-item span {
                 font-size: 1rem;
@@ -530,33 +603,53 @@
             .whatsapp-float i {
                 font-size: 2.3rem;
             }
+            .empilhadeira-img {
+                max-width: 280px;
+            }
+            .banner-title {
+                font-size: 1.2rem;
+            }
+            .banner-phone {
+                font-size: 1.1rem;
+                padding: 0.4rem 1.2rem;
+            }
+            .banner-badge {
+                font-size: 0.8rem;
+            }
         }
 
-        @media (max-width: 420px) {
-            .gallery-item .overlay h4 {
-                font-size: 0.9rem;
-            }
-            .contact-item h3 {
-                font-size: 1.1rem;
-            }
-            .icon-circle {
-                width: 42px;
-                height: 42px;
-                font-size: 1.3rem;
-            }
-            .empilhadeira-img {
-                max-width: 220px;
-                margin: 0 auto;
-            }
+        @media (max-width: 550px) {
             .hero {
+                flex-direction: column;
                 text-align: center;
             }
             .brand {
-                text-align: center;
+                justify-content: center;
+            }
+            .logo-principal {
+                max-width: 280px;
+                margin: 0 auto;
+            }
+            .empilhadeira-img {
+                max-width: 240px;
+                margin-left: auto;
+                margin-right: auto;
+            }
+            .banner-title-wrapper i {
+                font-size: 1.2rem;
+            }
+            .banner-title {
+                font-size: 1rem;
+            }
+            .banner-phone {
+                font-size: 0.9rem;
+                padding: 0.3rem 0.8rem;
+            }
+            .banner-badge {
+                font-size: 0.7rem;
             }
         }
 
-        /* redução de animação para quem prefere */
         @media (prefers-reduced-motion: reduce) {
             .gallery-item {
                 animation: none;
@@ -569,11 +662,20 @@
             .gallery-item:hover img {
                 transform: none;
             }
+            .brands-track {
+                animation: none;
+                transform: translateX(0);
+                flex-wrap: wrap;
+                justify-content: center;
+            }
+            .brands-slider {
+                overflow-x: auto;
+                mask-image: none;
+            }
         }
     </style>
 </head>
 <body>
-    <!-- Botão WhatsApp Flutuante melhorado para mobile -->
     <a href="https://wa.me/5511913268620?text=Olá! Gostaria de mais informações sobre os serviços da MARLIFT." 
        target="_blank" class="whatsapp-float" title="Fale conosco pelo WhatsApp" rel="noopener noreferrer">
         <i class="fa-brands fa-whatsapp"></i>
@@ -582,57 +684,66 @@
     <div class="contact-card">
         <div class="hero">
             <div class="brand">
-                <div class="marlift-title">
-                    <span class="mar-part">MAR</span><span class="lift-part">LIFT</span>
+                <div class="logo-principal">
+                    <img src="https://iili.io/BoxWvNn.png" alt="MARLIFT EMPILHADEIRAS - Logo oficial" loading="eager">
                 </div>
-                <span class="subtitle-empilhadeiras">EMPILHADEIRAS</span>
-                <p style="display: flex; gap: 0.4rem; flex-wrap: wrap; justify-content: center;">
-                    <i class="fa-solid fa-wrench" style="color: #E65C1E;"></i> Manutenção geral · 24h
-                </p>
             </div>
+            
+            <!-- BANNER WHATSAPP REFORMULADO: fundo transparente, tamanho reduzido, ícone alinhado, textos maiores -->
             <div class="empilhadeira-img">
-                <img src="https://iili.io/qNBzZOB.jpg" alt="Empilhadeira MARLIFT" loading="lazy">
+                <a href="https://wa.me/5511913268620?text=🚨%20EMERGÊNCIA%20MARLIFT%20-%20Preciso%20de%20atendimento%20 *URGENTE* %20para%20minha%20empilhadeira!%20(Chamado%2024hs)" 
+                   target="_blank" rel="noopener noreferrer" class="wa-emergency-banner">
+                    
+                    <div class="banner-title-wrapper">
+                        <i class="fa-brands fa-whatsapp"></i>
+                        <span class="banner-title">ATENDIMENTO 24hs</span>
+                    </div>
+                    
+                    <div class="banner-sub">Emergências & Suporte Técnico Imediato</div>
+                    
+                    <div class="banner-phone">
+                        <i class="fa-brands fa-whatsapp"></i> (11) 9 1326-8620
+                    </div>
+                    
+                    <div class="banner-badge">
+                        <i class="fa-regular fa-clock"></i> Plantão 24hs • Chame agora
+                    </div>
+                </a>
             </div>
         </div>
 
-        <!-- GALERIA DE SERVIÇOS com todas as imagens responsivas -->
+        <!-- GALERIA DE SERVIÇOS -->
         <section class="gallery-section">
             <div class="gallery-title">
                 <h2>Nossos Serviços</h2>
                 <p>Equipamentos, peças genuínas e soluções completas</p>
             </div>
             <div class="gallery-grid">
-                <!-- 1 - Empilhadeiras -->
                 <div class="gallery-item">
                     <img src="https://www.zanettiempilhadeiras.com.br/wp-content/uploads/2016/10/Empilhadeira-Toyota-8FG-1.8-a-3-1024x748.jpg?w=600&h=450&fit=crop" alt="Empilhadeira" loading="lazy">
                     <div class="icon-badge"><i class="fa-solid fa-cogs"></i></div>
                     <div class="overlay"><h4>Empilhadeiras</h4><p>Manutenção preventiva e corretiva</p></div>
                 </div>
-                <!-- 2 - Peças elétricas -->
                 <div class="gallery-item">
                     <img src="https://empilhadeiras.eletracempilhadeiras.com.br/imagens/pecas-para-empilhadeira-eletrica-still.jpg?w=600&h=450&fit=crop" alt="Sistema Elétrico" loading="lazy">
                     <div class="icon-badge"><i class="fa-solid fa-bolt"></i></div>
                     <div class="overlay"><h4>Sistema Elétrico</h4><p>Baterias, motores e controle</p></div>
                 </div>
-                <!-- 3 - Multimarcas -->
                 <div class="gallery-item">
                     <img src="https://st2.depositphotos.com/1001877/5525/i/450/depositphotos_55251599-stock-photo-forklift-truck-with-boxes-on.jpg?w=600&h=450&fit=crop" alt="Multimarcas" loading="lazy">
                     <div class="icon-badge"><i class="fa-solid fa-arrows-up-down"></i></div>
                     <div class="overlay"><h4>Multimarcas</h4><p>Especialistas em diversos modelos</p></div>
                 </div>
-                <!-- 4 - Peças Originais -->
                 <div class="gallery-item">
                     <img src="https://guaraempilhadeiras.com.br/wp-content/uploads/2023/08/pecas-para-transmissao-empilhadeira.jpg?w=600&h=450&fit=crop" alt="Peças e Componentes" loading="lazy">
                     <div class="icon-badge"><i class="fa-solid fa-microchip"></i></div>
                     <div class="overlay"><h4>Peças Originais</h4><p>Filtros, freios, cilindros e mais</p></div>
                 </div>
-                <!-- 5 - Kit Gás GLP -->
                 <div class="gallery-item">
                     <img src="https://http2.mlstatic.com/D_NQ_NP_996636-MLB89020902879_072025-O.webp?w=600&h=450&fit=crop" alt="Kit Gás GLP" loading="lazy">
                     <div class="icon-badge"><i class="fa-solid fa-fire-flame-curved"></i></div>
                     <div class="overlay"><h4>Kit Gás / GLP</h4><p>Conversão e manutenção de sistemas a gás</p></div>
                 </div>
-                <!-- 6 - Inspeção Completa -->
                 <div class="gallery-item">
                     <img src="https://iili.io/BoF5S2t.jpg?w=600&h=450&fit=crop" alt="Sistema hidráulico e gás" loading="lazy">
                     <div class="icon-badge"><i class="fa-solid fa-industry"></i></div>
@@ -641,9 +752,9 @@
             </div>
         </section>
 
-        <!-- MULTIMARCAS com rolagem horizontal suave (touch friendly) -->
+        <!-- MULTIMARCAS -->
         <div class="multibrands">
-            <div class="brands-header" style="text-align: center;">
+            <div class="brands-header">
                 <h3>MULTIMARCAS</h3>
                 <p>As maiores marcas do segmento mundial</p>
             </div>
@@ -656,6 +767,9 @@
                     <div class="brand-item"><i class="fa-solid fa-bolt"></i><span>LINDE</span></div>
                     <div class="brand-item"><i class="fa-solid fa-crown"></i><span>CROWN</span></div>
                     <div class="brand-item"><i class="fa-solid fa-car"></i><span>HYUNDAI</span></div>
+                    <div class="brand-item"><i class="fa-solid fa-industry"></i><span>KOMATSU</span></div>
+                    <div class="brand-item"><i class="fa-solid fa-truck-ramp-box"></i><span>CLARK</span></div>
+                    <div class="brand-item"><i class="fa-solid fa-charging-station"></i><span>HELI</span></div>
                     <div class="brand-item"><i class="fa-solid fa-industry"></i><span>TOYOTA</span></div>
                     <div class="brand-item"><i class="fa-solid fa-truck-moving"></i><span>HYSTER</span></div>
                     <div class="brand-item"><i class="fa-solid fa-cubes"></i><span>YALE</span></div>
@@ -663,11 +777,14 @@
                     <div class="brand-item"><i class="fa-solid fa-bolt"></i><span>LINDE</span></div>
                     <div class="brand-item"><i class="fa-solid fa-crown"></i><span>CROWN</span></div>
                     <div class="brand-item"><i class="fa-solid fa-car"></i><span>HYUNDAI</span></div>
+                    <div class="brand-item"><i class="fa-solid fa-industry"></i><span>KOMATSU</span></div>
+                    <div class="brand-item"><i class="fa-solid fa-truck-ramp-box"></i><span>CLARK</span></div>
+                    <div class="brand-item"><i class="fa-solid fa-charging-station"></i><span>HELI</span></div>
                 </div>
             </div>
         </div>
 
-        <!-- CONTATO INFO com espaçamento melhor -->
+        <!-- CONTATO INFO -->
         <div class="info-grid">
             <div class="contact-item">
                 <div class="icon-circle"><i class="fa-brands fa-whatsapp"></i></div>
@@ -695,7 +812,7 @@
             </div>
         </div>
 
-        <!-- MAPA LOCALIZAÇÃO com iframe adaptado -->
+        <!-- MAPA -->
         <div class="mapa-local">
             <div class="mapa-container">
                 <div class="mapa-titulo">
