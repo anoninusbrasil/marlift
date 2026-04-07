@@ -4,10 +4,9 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes, viewport-fit=cover">
     <meta name="description" content="A Marlift Empilhadeiras oferece serviços especializados de peças e manutenção para empilhadeiras, com atendimento 24hs emergência e suporte técnico imediato e orçamentos via WhatsApp comercial (11) 9 1326-8620. A empresa foca em soluções técnicas para operação contínua, incluindo manutenção preventiva e corretiva para modelos elétricos, GLP e diesel, visando a disponibilidade da frota.">
-    <meta name="keywords" content="empilhadeira, manutenção, peças, kit gás, Toyota, Hyster, Yale, Still, Linde, Crown">
+    <meta name="keywords" content="empilhadeira, manutenção, peças, Lavagem, Toyota, Hyster, Yale, Still, Linde, Crown">
     <link rel="canonical" href="https://www.marliftempilhadeiras.com.br/" />
-    <title>MARLIFT EMPILHADEIRAS | Manutenção preventiva, corretiva e chamados emergenciais 24hs.
-</title>
+    <title>MARLIFT EMPILHADEIRAS | Manutenção preventiva, corretiva e chamados emergenciais 24hs</title>
     <link rel="icon" type="image/x-icon" href="/favicon.ico">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
     <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;1,400;1,500;1,600;1,700;1,800&display=swap" rel="stylesheet">
@@ -293,12 +292,12 @@
         .gallery-item:nth-child(8) { animation-delay: 0.8s; }
         .gallery-item:nth-child(9) { animation-delay: 0.9s; }
 
-        .gallery-item:active {
-            transform: scale(0.98);
-        }
-
         @keyframes fadeInUp {
             to { opacity: 1; transform: translateY(0); }
+        }
+
+        .gallery-item:active {
+            transform: scale(0.98);
         }
 
         .gallery-item::before {
@@ -608,7 +607,7 @@
             box-shadow: 0 10px 25px -5px rgba(230,92,30,0.4);
         }
 
-        /* INFO GRID */
+        /* INFO GRID - CORRIGIDO com animação de entrada suave */
         .info-grid {
             display: grid;
             grid-template-columns: 1fr;
@@ -628,6 +627,15 @@
             box-shadow: 0 10px 18px -6px black;
             transition: transform 0.3s cubic-bezier(0.34, 1.56, 0.64, 1), box-shadow 0.3s;
             border: 1px solid rgba(230,92,30,0.4);
+            /* Garantia de visibilidade imediata, mas com leve animação ao rolar */
+            opacity: 0;
+            transform: translateY(20px);
+            transition: opacity 0.6s ease, transform 0.6s ease;
+        }
+        
+        .contact-item.visible {
+            opacity: 1;
+            transform: translateY(0);
         }
 
         .contact-item:hover {
@@ -694,6 +702,14 @@
             background: #211810;
             border-radius: 1.6rem;
             padding: 1rem;
+            opacity: 0;
+            transform: translateY(20px);
+            transition: opacity 0.6s ease, transform 0.6s ease;
+        }
+        
+        .mapa-container.visible {
+            opacity: 1;
+            transform: translateY(0);
         }
 
         .mapa-titulo {
@@ -890,6 +906,11 @@
                 overflow-x: auto;
                 mask-image: none;
             }
+            .contact-item, .mapa-container {
+                opacity: 1;
+                transform: none;
+                transition: none;
+            }
         }
     </style>
 </head>
@@ -929,7 +950,7 @@
 
         <section class="gallery-section" aria-labelledby="gallery-title">
             <div class="gallery-title">
-                <h2 id="gallery-title">Nossos Serviços</h2>
+                <h2 id="gallery-title">Nossos Servicos</h2>
                 <p>Manutenção preventiva, corretiva e chamados emergenciais 24hs</p>
             </div>
             <div class="gallery-grid" role="list">
@@ -939,35 +960,35 @@
                     <div class="overlay">
                         <h4>Lavagem e Lubrificação</h4><p>Sua empilhadeira é o motor da sua logística.</p></div>
                 </article>
-                <article class="gallery-item" role="listitem" tabindex="0" data-title="Hidráulica Completa" data-desc="Valvulas, mangueiras, cilindros">
+                <article class="gallery-item" role="listitem" tabindex="0" data-title="Hidraulica Completa" data-desc="Valvulas, mangueiras, cilindros">
                     <img src="https://iili.io/BTyhkKJ.png" alt="Sistema hidráulico e cilindros" loading="lazy">
                     <div class="icon-badge"><i class="fa-solid fa-oil-can" aria-hidden="true"></i></div>
-                    <div class="overlay"><h4>Hidráulica Completa</h4><p>Válvulas, mangueiras, cilindros</p></div>
+                    <div class="overlay"><h4>Hidraulica Completa</h4><p>Valvulas, mangueiras, cilindros</p></div>
                 </article>
-                <article class="gallery-item" role="listitem" tabindex="0" data-title="Pecas Genuinas" data-desc="Conversão, segurança e manutenção de sistema a gás">
+                <article class="gallery-item" role="listitem" tabindex="0" data-title="Pecas Genuinas" data-desc="Conversao, seguranca e manutencao de sistema a gas">
                     <img src="https://iili.io/BTyhPoX.png" alt="Kit Gás GLP para empilhadeiras" loading="lazy">
                     <div class="icon-badge"><i class="fa-solid fa-fire-flame-curved" aria-hidden="true"></i></div>
-                    <div class="overlay"><h4>Peças Genuinas</h4><p>Conversão, segurança e manutenção de sistema a gás</p></div>
+                    <div class="overlay"><h4>Pecas Genuinas</h4><p>Conversao, seguranca e manutencao de sistema a gas</p></div>
                 </article>
-                <article class="gallery-item" role="listitem" tabindex="0" data-title="Multimarcas" data-desc="Diagnóstico avançado e peças originais">
+                <article class="gallery-item" role="listitem" tabindex="0" data-title="Multimarcas" data-desc="Diagnostico avancado e pecas originais">
                     <img src="https://iili.io/BTyhiVn.png" alt="Manutenção multimarcas especializada" loading="lazy">
                     <div class="icon-badge"><i class="fa-solid fa-microchip" aria-hidden="true"></i></div>
-                    <div class="overlay"><h4>Multimarcas</h4><p>Diagnóstico avançado e pecas originais</p></div>
+                    <div class="overlay"><h4>Multimarcas</h4><p>Diagnostico avancado e pecas originais</p></div>
                 </article>
                 <article class="gallery-item" role="listitem" tabindex="0" data-title="Atendimento 24hs" data-desc="Chamados emergenciais 24hs">
                     <img src="https://iili.io/Bu8LFR4.png" alt="Equipe técnica realizando manutenção preventiva" loading="lazy">
                     <div class="icon-badge"><i class="fa-solid fa-wrench" aria-hidden="true"></i></div>
                     <div class="overlay"><h4>Atendimento 24hs</h4><p>Chamados emergenciais 24hs</p></div>
                 </article>
-                <article class="gallery-item" role="listitem" tabindex="0" data-title="Inspeção e Segurança" data-desc="Laudo de segurança, freios, direção e estrutura">
+                <article class="gallery-item" role="listitem" tabindex="0" data-title="Inspecao e Seguranca" data-desc="Laudo de seguranca, freios, direcao e estrutura">
                     <img src="https://iili.io/BTbvi8v.png" alt="Inspeção de segurança e freios" loading="lazy">
                     <div class="icon-badge"><i class="fa-solid fa-clipboard-list" aria-hidden="true"></i></div>
-                    <div class="overlay"><h4>Inspecao e Seguranca</h4><p>Laudo de seguranca, freios, direção e estrutura</p></div>
+                    <div class="overlay"><h4>Inspecao e Seguranca</h4><p>Laudo de seguranca, freios, direcao e estrutura</p></div>
                 </article>
-                <article class="gallery-item" role="listitem" tabindex="0" data-title="Motor e Transmissao" data-desc="Revisão completa, embreagem, caixa de cambio">
+                <article class="gallery-item" role="listitem" tabindex="0" data-title="Motor e Transmissao" data-desc="Revisao completa, embreagem, caixa de cambio">
                     <img src="https://iili.io/BuHN29f.png" alt="Manutenção de motor e transmissão" loading="lazy">
                     <div class="icon-badge"><i class="fa-solid fa-engine" aria-hidden="true"></i></div>
-                    <div class="overlay"><h4>Motor e Transmissao</h4><p>Revisão completa, embreagem, caixa de cambio</p></div>
+                    <div class="overlay"><h4>Motor e Transmissao</h4><p>Revisao completa, embreagem, caixa de cambio</p></div>
                 </article>
                 <article class="gallery-item" role="listitem" tabindex="0" data-title="Freios e Rodagem" data-desc="Pastilhas, discos, pneus e alinhamento">
                     <img src="https://iili.io/B5qTycQ.png" alt="Sistema de freios e rodas" loading="lazy">
@@ -1013,28 +1034,28 @@
             </div>
         </section>
 
-        <section class="info-grid" aria-label="Informações de contato">
+        <section class="info-grid" aria-label="Informacoes de contato">
             <article class="contact-item">
                 <div class="icon-circle"><i class="fa-brands fa-whatsapp" aria-hidden="true"></i></div>
                 <h3>WhatsApp</h3>
                 <a href="https://wa.me/5511913268620?text=Olá! Gostaria de mais informações sobre os serviços da MARLIFT." target="_blank" rel="noopener noreferrer">
                     <i class="fa-brands fa-whatsapp" aria-hidden="true"></i> (11) 9 1326-8620
                 </a>
-                <span style="font-size: 0.7rem; color: #e6bc8c;">Atendimento 24hs emergencial</span>
+                <span style="font-size: 0.7rem; color: #e6bc8c;">atendimento 24h emergencia</span>
             </article>
             <article class="contact-item">
                 <div class="icon-circle"><i class="fa-regular fa-envelope" aria-hidden="true"></i></div>
                 <h3>E-mail</h3>
-                <a href="mailto:contato@marlift.com.br"><i class="fa-regular fa-envelope" aria-hidden="true"></i> contato@marlift.com.br</a>
-                <span style="font-size: 0.7rem; color: #e6bc8c;">Orçamentos e suporte técnico</span>
+                <a href="mailto:contato@marlift.com.br"><i class="fa-regular fa-envelope" aria-hidden="true"></i> contato@marfit.com.br</a>
+                <span style="font-size: 0.7rem; color: #e6bc8c;">orcamentos e suporte tecnico</span>
             </article>
             <article class="contact-item">
                 <div class="icon-circle"><i class="fa-regular fa-building" aria-hidden="true"></i></div>
-                <h3>Endereço</h3>
+                <h3>Endereco</h3>
                 <div class="endereco-bloco">
-                    <p><i class="fa-regular fa-map" aria-hidden="true"></i> Rua Maria Fernanda N° 279</p>
-                    <p><i class="fa-regular fa-compass" aria-hidden="true"></i> Chácaras Maria Inês</p>
-                    <p><i class="fa-regular fa-city" aria-hidden="true"></i> Santana de Parnaíba - SP</p>
+                    <p><i class="fa-regular fa-map" aria-hidden="true"></i> Rua Maria Fernanda N 279</p>
+                    <p><i class="fa-regular fa-compass" aria-hidden="true"></i> Chacaras Maria Ines</p>
+                    <p><i class="fa-regular fa-city" aria-hidden="true"></i> Santana de Parnaiba - SP</p>
                     <p><i class="fa-solid fa-location-dot" aria-hidden="true"></i> CEP: 06.516-010</p>
                 </div>
             </article>
@@ -1044,7 +1065,7 @@
             <div class="mapa-container">
                 <div class="mapa-titulo">
                     <i class="fa-regular fa-map" aria-hidden="true"></i>
-                    <span>Onde estamos - fácil acesso</span>
+                    <span>Onde estamos - facil acesso</span>
                 </div>
                 <div class="mapa-frame">
                     <iframe 
@@ -1060,7 +1081,7 @@
         </section>
 
         <footer class="footer-note">
-            <i class="fa-regular fa-clock" aria-hidden="true"></i> Atendimento 24hs emergencia | <strong>MARLIFT EMPILHADEIRAS</strong> – Manutenção em geral, peças e kit gás para empilhadeiras
+            <i class="fa-regular fa-clock" aria-hidden="true"></i> Atendimento 24hs emergencia | <strong>MARLIFT EMPILHADEIRAS</strong> – Manutencao em geral, pecas e lavagem de empilhadeiras
         </footer>
     </div>
 
@@ -1085,21 +1106,18 @@
     </div>
 
     <script>
-        // Initialize variables first
+        // ========== CANVAS DE FUNDO ==========
         const canvas = document.getElementById('bgCanvas');
         const ctx = canvas.getContext('2d');
         let particles = [];
         let animationId = null;
-        let mouseX = 0;
-        let mouseY = 0;
+        let mouseX = 0, mouseY = 0;
         const prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
 
-        // Particle class
         class Particle {
             constructor() {
                 this.reset();
             }
-
             reset() {
                 this.x = Math.random() * canvas.width;
                 this.y = Math.random() * canvas.height;
@@ -1107,14 +1125,11 @@
                 this.speedX = (Math.random() - 0.5) * 0.3;
                 this.speedY = (Math.random() - 0.5) * 0.3;
                 this.opacity = Math.random() * 0.5 + 0.2;
-                this.hue = Math.random() * 30 + 15; // Orange range
+                this.hue = Math.random() * 30 + 15;
             }
-
             update() {
                 this.x += this.speedX;
                 this.y += this.speedY;
-
-                // Mouse interaction
                 const dx = mouseX - this.x;
                 const dy = mouseY - this.y;
                 const dist = Math.sqrt(dx * dx + dy * dy);
@@ -1123,14 +1138,11 @@
                     this.x -= dx * force * 0.02;
                     this.y -= dy * force * 0.02;
                 }
-
-                // Wrap around
                 if (this.x < 0) this.x = canvas.width;
                 if (this.x > canvas.width) this.x = 0;
                 if (this.y < 0) this.y = canvas.height;
                 if (this.y > canvas.height) this.y = 0;
             }
-
             draw() {
                 ctx.beginPath();
                 ctx.arc(this.x, this.y, Math.max(0.5, this.size), 0, Math.PI * 2);
@@ -1153,20 +1165,17 @@
         }
 
         function animateParticles() {
+            if (!ctx) return;
             ctx.clearRect(0, 0, canvas.width, canvas.height);
-            
             particles.forEach(particle => {
                 particle.update();
                 particle.draw();
             });
-
-            // Draw connections
             particles.forEach((p1, i) => {
                 particles.slice(i + 1).forEach(p2 => {
                     const dx = p1.x - p2.x;
                     const dy = p1.y - p2.y;
                     const dist = Math.sqrt(dx * dx + dy * dy);
-                    
                     if (dist < 120) {
                         ctx.beginPath();
                         ctx.moveTo(p1.x, p1.y);
@@ -1177,23 +1186,18 @@
                     }
                 });
             });
-
             animationId = requestAnimationFrame(animateParticles);
         }
 
-        // Initialize canvas after defining functions
-        resizeCanvas();
-        
         if (!prefersReducedMotion) {
+            resizeCanvas();
             initParticles();
             animateParticles();
         }
 
         window.addEventListener('resize', () => {
             resizeCanvas();
-            if (!prefersReducedMotion) {
-                initParticles();
-            }
+            if (!prefersReducedMotion) initParticles();
         });
 
         document.addEventListener('mousemove', (e) => {
@@ -1201,7 +1205,7 @@
             mouseY = e.clientY;
         });
 
-        // LIGHTBOX
+        // ========== LIGHTBOX ==========
         const galleryItems = document.querySelectorAll('.gallery-item');
         const lightbox = document.getElementById('lightbox');
         const lightboxImg = document.getElementById('lightbox-img');
@@ -1214,7 +1218,7 @@
 
         function openLightbox(index) {
             currentIndex = index;
-            const item = galleryItems[index];
+            const item = galleryItems[currentIndex];
             const img = item.querySelector('img');
             lightboxImg.src = img.src;
             lightboxImg.alt = img.alt;
@@ -1228,7 +1232,7 @@
         function closeLightbox() {
             lightbox.classList.remove('active');
             document.body.style.overflow = '';
-            galleryItems[currentIndex].focus();
+            if (galleryItems[currentIndex]) galleryItems[currentIndex].focus();
         }
 
         function showPrev() {
@@ -1254,11 +1258,9 @@
         closeBtn.addEventListener('click', closeLightbox);
         prevBtn.addEventListener('click', showPrev);
         nextBtn.addEventListener('click', showNext);
-
         lightbox.addEventListener('click', (e) => {
             if (e.target === lightbox) closeLightbox();
         });
-
         document.addEventListener('keydown', (e) => {
             if (!lightbox.classList.contains('active')) return;
             if (e.key === 'Escape') closeLightbox();
@@ -1266,26 +1268,26 @@
             if (e.key === 'ArrowRight') showNext();
         });
 
-        // Intersection Observer for scroll animations
+        // ========== ANIMAÇÃO DE ENTRADA DOS CONTATOS E MAPA (CORRIGIDA) ==========
+        const fadeElements = document.querySelectorAll('.contact-item, .mapa-container');
+        
         const observerOptions = {
-            threshold: 0.1,
-            rootMargin: '0px 0px -50px 0px'
+            threshold: 0.15,
+            rootMargin: '0px 0px -30px 0px'
         };
-
-        const observer = new IntersectionObserver((entries) => {
+        
+        const fadeObserver = new IntersectionObserver((entries) => {
             entries.forEach(entry => {
                 if (entry.isIntersecting) {
-                    entry.target.style.animationPlayState = 'running';
+                    entry.target.classList.add('visible');
+                    fadeObserver.unobserve(entry.target);
                 }
             });
         }, observerOptions);
-
-        document.querySelectorAll('.contact-item, .mapa-container').forEach(el => {
-            el.style.opacity = '0';
-            el.style.transform = 'translateY(20px)';
-            el.style.animation = 'fadeInUp 0.5s ease forwards';
-            el.style.animationPlayState = 'paused';
-            observer.observe(el);
+        
+        fadeElements.forEach(el => {
+            // Já começa com opacity:0 e transform via CSS; a classe .visible trará opacity:1
+            fadeObserver.observe(el);
         });
     </script>
 </body>
