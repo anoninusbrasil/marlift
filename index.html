@@ -1,1294 +1,590 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes, viewport-fit=cover">
-    <meta name="description" content="A Marlift Empilhadeiras oferece serviços especializados de peças e manutenção para empilhadeiras, com atendimento 24hs emergência e suporte técnico imediato e orçamentos via WhatsApp comercial (11) 9 1326-8620. A empresa foca em soluções técnicas para operação contínua, incluindo manutenção preventiva e corretiva para modelos elétricos, GLP e diesel, visando a disponibilidade da frota.">
-    <meta name="keywords" content="empilhadeira, manutenção, peças, Lavagem, Toyota, Hyster, Yale, Still, Linde, Crown">
-    <link rel="canonical" href="https://www.marliftempilhadeiras.com.br/" />
-    <title>MARLIFT EMPILHADEIRAS | Manutenção preventiva, corretiva e chamados emergenciais 24hs</title>
-    <link rel="icon" type="image/x-icon" href="/favicon.ico">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;1,400;1,500;1,600;1,700;1,800&display=swap" rel="stylesheet">
-    <style>
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-            font-family: 'Poppins', 'Segoe UI', system-ui, sans-serif;
-        }
-
-        body {
-            background: #0a0a0a;
-            min-height: 100vh;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            padding: 1rem;
-            position: relative;
-            overflow-x: hidden;
-        }
-
-        /* Animated Background */
-        .bg-canvas {
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            z-index: 0;
-            pointer-events: none;
-        }
-
-        .bg-gradient-overlay {
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background: linear-gradient(145deg, rgba(10,10,10,0.85) 0%, rgba(44,26,11,0.75) 55%, rgba(230,92,30,0.3) 100%);
-            z-index: 1;
-            pointer-events: none;
-        }
-
-        .contact-card {
-            max-width: 1300px;
-            width: 100%;
-            background: rgba(20, 12, 8, 0.85);
-            backdrop-filter: blur(16px);
-            -webkit-backdrop-filter: blur(16px);
-            border-radius: 2rem;
-            box-shadow: 0 25px 45px rgba(0, 0, 0, 0.5), 0 0 0 1px rgba(230, 92, 30, 0.4);
-            overflow: hidden;
-            border: 1px solid rgba(255, 140, 66, 0.4);
-            position: relative;
-            z-index: 10;
-        }
-
-        .hero {
-            background: #0f0b07;
-            background-image: radial-gradient(circle at 30% 40%, rgba(230, 92, 30, 0.15) 0%, transparent 60%);
-            padding: 1.5rem 1.5rem;
-            color: white;
-            display: flex;
-            flex-wrap: wrap;
-            align-items: center;
-            justify-content: space-between;
-            gap: 1.5rem;
-            border-bottom: 4px solid #E65C1E;
-            position: relative;
-        }
-
-        .brand {
-            flex: 1;
-            min-width: 180px;
-            display: flex;
-            justify-content: flex-start;
-        }
-
-        .logo-principal {
-            max-width: 480px;
-            width: 100%;
-            transition: transform 0.3s cubic-bezier(0.34, 1.56, 0.64, 1);
-        }
-
-        .logo-principal:hover {
-            transform: scale(1.03);
-        }
-
-        .logo-principal img {
-            width: 100%;
-            height: auto;
-            display: block;
-            filter: drop-shadow(0 6px 12px rgba(0,0,0,0.5));
-            border-radius: 16px;
-        }
-
-        .empilhadeira-img {
-            max-width: 260px;
-            width: 100%;
-            min-width: 200px;
-            transition: all 0.3s;
-        }
-
-        .wa-emergency-banner {
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            justify-content: center;
-            text-decoration: none;
-            background: rgba(0, 0, 0, 0.55);
-            backdrop-filter: blur(8px);
-            -webkit-backdrop-filter: blur(8px);
-            border-radius: 28px;
-            padding: 0.8rem 0.6rem;
-            gap: 0.5rem;
-            transition: transform 0.3s cubic-bezier(0.34, 1.56, 0.64, 1), box-shadow 0.3s ease;
-            border: 2px solid #FF8C42;
-            box-shadow: 0 8px 18px -6px rgba(0,0,0,0.4);
-            text-align: center;
-            width: 100%;
-            min-height: auto;
-        }
-
-        .wa-emergency-banner:hover {
-            transform: translateY(-5px) scale(1.02);
-            box-shadow: 0 20px 35px -10px rgba(230,92,30,0.5);
-            background: rgba(0, 0, 0, 0.7);
-            border-color: #E65C1E;
-        }
-
-        .wa-emergency-banner:active {
-            transform: scale(0.97);
-        }
-
-        .banner-title-wrapper {
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            gap: 0.5rem;
-            flex-wrap: wrap;
-        }
-
-        .banner-title-wrapper i {
-            font-size: 1.4rem;
-            color: #25D366;
-            filter: drop-shadow(0 1px 2px rgba(0,0,0,0.3));
-        }
-
-        .banner-title {
-            font-weight: 800;
-            font-size: 1.1rem;
-            letter-spacing: 1px;
-            background: transparent;
-            padding: 0;
-            color: #FF8C42;
-            text-shadow: 0 1px 2px rgba(0,0,0,0.5);
-        }
-
-        .banner-sub {
-            font-size: 0.7rem;
-            font-weight: 500;
-            opacity: 0.95;
-            color: #FFE0B5;
-        }
-
-        .banner-phone {
-            background: rgba(10, 47, 40, 0.8);
-            padding: 0.4rem 1rem;
-            border-radius: 50px;
-            font-weight: 800;
-            font-size: 1rem;
-            display: inline-flex;
-            align-items: center;
-            gap: 8px;
-            color: #FFE0A3;
-            border: 1px solid #FFB347;
-            margin-top: 0.2rem;
-        }
-
-        .banner-phone i {
-            font-size: 1rem;
-        }
-
-        .banner-badge {
-            font-size: 0.75rem;
-            background: #E65C1E;
-            padding: 0.25rem 0.9rem;
-            border-radius: 20px;
-            font-weight: 700;
-            display: inline-flex;
-            align-items: center;
-            gap: 0.4rem;
-            letter-spacing: 0.5px;
-            animation: attentionBlink 1.2s ease-in-out infinite;
-            transform-origin: center;
-        }
-
-        @keyframes attentionBlink {
-            0%, 100% {
-                background-color: #E65C1E;
-                box-shadow: 0 0 0 0 rgba(230, 92, 30, 0.7);
-                transform: scale(1);
-            }
-            50% {
-                background-color: #FF7A2E;
-                box-shadow: 0 0 20px 5px rgba(230, 92, 30, 0.6);
-                transform: scale(1.05);
-            }
-        }
-
-        /* GALERIA */
-        .gallery-section {
-            background: linear-gradient(180deg, #0a0603 0%, #1e130b 40%, #0a0603 100%);
-            padding: 2rem 1rem 2.5rem 1rem;
-            position: relative;
-        }
-
-        .gallery-title {
-            text-align: center;
-            margin-bottom: 1.8rem;
-        }
-
-        .gallery-title h2 {
-            font-size: clamp(1.5rem, 6vw, 2.2rem);
-            font-weight: 800;
-            color: #FF8C42;
-            text-transform: uppercase;
-            letter-spacing: 2px;
-            display: inline-flex;
-            align-items: center;
-            gap: 0.5rem;
-            text-shadow: 0 2px 5px rgba(0,0,0,0.4);
-            flex-wrap: wrap;
-            justify-content: center;
-        }
-
-        .gallery-title h2::before,
-        .gallery-title h2::after {
-            content: '';
-            width: 30px;
-            height: 2px;
-            background: linear-gradient(90deg, transparent, #E65C1E, transparent);
-        }
-
-        .gallery-title p {
-            color: #f0c48b;
-            font-size: 1rem;
-            font-weight: 500;
-            max-width: 90%;
-            margin: 0.5rem auto 0;
-        }
-
-        .gallery-grid {
-            display: grid;
-            grid-template-columns: repeat(3, 1fr);
-            gap: 1.5rem;
-            position: relative;
-            z-index: 2;
-        }
-
-        .gallery-item {
-            border-radius: 1.3rem;
-            overflow: hidden;
-            cursor: pointer;
-            opacity: 0;
-            transform: translateY(30px);
-            animation: fadeInUp 0.6s ease forwards;
-            box-shadow: 0 12px 20px -6px rgba(0,0,0,0.5);
-            transition: transform 0.3s cubic-bezier(0.34, 1.56, 0.64, 1), box-shadow 0.3s;
-            position: relative;
-            background: #1e160f;
-            aspect-ratio: 3 / 4;
-        }
-
-        .gallery-item:nth-child(1) { animation-delay: 0.1s; }
-        .gallery-item:nth-child(2) { animation-delay: 0.2s; }
-        .gallery-item:nth-child(3) { animation-delay: 0.3s; }
-        .gallery-item:nth-child(4) { animation-delay: 0.4s; }
-        .gallery-item:nth-child(5) { animation-delay: 0.5s; }
-        .gallery-item:nth-child(6) { animation-delay: 0.6s; }
-        .gallery-item:nth-child(7) { animation-delay: 0.7s; }
-        .gallery-item:nth-child(8) { animation-delay: 0.8s; }
-        .gallery-item:nth-child(9) { animation-delay: 0.9s; }
-
-        @keyframes fadeInUp {
-            to { opacity: 1; transform: translateY(0); }
-        }
-
-        .gallery-item:active {
-            transform: scale(0.98);
-        }
-
-        .gallery-item::before {
-            content: '';
-            position: absolute;
-            inset: 0;
-            background: linear-gradient(180deg, transparent 0%, transparent 40%, rgba(0,0,0,0.5) 70%, rgba(0,0,0,0.85) 100%);
-            z-index: 1;
-            transition: all 0.3s;
-            pointer-events: none;
-        }
-
-        .gallery-item:hover {
-            transform: translateY(-8px);
-            box-shadow: 0 25px 40px -10px rgba(230,92,30,0.4);
-        }
-
-        .gallery-item:hover::before {
-            background: linear-gradient(180deg, rgba(230,92,30,0.15) 0%, transparent 35%, rgba(0,0,0,0.5) 65%, rgba(0,0,0,0.85) 100%);
-        }
-
-        .gallery-item img {
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
-            transition: transform 0.5s cubic-bezier(0.2, 0.9, 0.4, 1.1);
-            filter: brightness(0.92) contrast(1.05);
-            display: block;
-        }
-
-        .gallery-item:hover img {
-            transform: scale(1.1);
-        }
-
-        .gallery-item .overlay {
-            position: absolute;
-            bottom: 0;
-            left: 0;
-            right: 0;
-            padding: 0.8rem 1rem;
-            z-index: 2;
-            transform: translateY(8px);
-            transition: transform 0.3s ease;
-        }
-
-        .gallery-item:hover .overlay {
-            transform: translateY(0);
-        }
-
-        .gallery-item .overlay h4 {
-            color: #FF8C42;
-            font-size: clamp(1rem, 4vw, 1.3rem);
-            font-weight: 800;
-            text-transform: uppercase;
-            letter-spacing: 1px;
-            text-shadow: 0 1px 3px black;
-        }
-
-        .gallery-item .overlay p {
-            color: #FFF2E0;
-            font-size: 0.75rem;
-            font-weight: 500;
-            opacity: 0;
-            transform: translateY(8px);
-            transition: all 0.25s ease 0.1s;
-        }
-
-        .gallery-item:hover .overlay p {
-            opacity: 1;
-            transform: translateY(0);
-        }
-
-        .icon-badge {
-            position: absolute;
-            top: 0.7rem;
-            right: 0.7rem;
-            width: 34px;
-            height: 34px;
-            background: linear-gradient(135deg, #E65C1E, #b03d0f);
-            border-radius: 50%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            z-index: 2;
-            box-shadow: 0 3px 8px rgba(0,0,0,0.4);
-            opacity: 0;
-            transform: scale(0.5);
-            transition: all 0.3s cubic-bezier(0.34, 1.2, 0.64, 1);
-        }
-
-        .gallery-item:hover .icon-badge {
-            opacity: 1;
-            transform: scale(1);
-        }
-
-        .icon-badge i {
-            color: #0a0603;
-            font-size: 1rem;
-        }
-
-        /* LIGHTBOX */
-        .lightbox {
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background: rgba(0,0,0,0.95);
-            z-index: 9999;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            opacity: 0;
-            visibility: hidden;
-            transition: all 0.4s ease;
-            backdrop-filter: blur(10px);
-        }
-
-        .lightbox.active {
-            opacity: 1;
-            visibility: visible;
-        }
-
-        .lightbox-content {
-            position: relative;
-            max-width: 90%;
-            max-height: 90%;
-            transform: scale(0.8);
-            transition: transform 0.4s cubic-bezier(0.34, 1.56, 0.64, 1);
-        }
-
-        .lightbox.active .lightbox-content {
-            transform: scale(1);
-        }
-
-        .lightbox-content img {
-            max-width: 100%;
-            max-height: 85vh;
-            border-radius: 1rem;
-            box-shadow: 0 30px 60px rgba(0,0,0,0.5);
-        }
-
-        .lightbox-close {
-            position: absolute;
-            top: -50px;
-            right: 0;
-            width: 44px;
-            height: 44px;
-            background: linear-gradient(135deg, #E65C1E, #b03d0f);
-            border: none;
-            border-radius: 50%;
-            cursor: pointer;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            transition: all 0.3s;
-        }
-
-        .lightbox-close:hover {
-            transform: scale(1.1);
-            box-shadow: 0 5px 20px rgba(230,92,30,0.5);
-        }
-
-        .lightbox-close i {
-            color: white;
-            font-size: 1.2rem;
-        }
-
-        .lightbox-info {
-            position: absolute;
-            bottom: -60px;
-            left: 50%;
-            transform: translateX(-50%);
-            text-align: center;
-            white-space: nowrap;
-        }
-
-        .lightbox-info h4 {
-            color: #FF8C42;
-            font-size: 1.3rem;
-            font-weight: 800;
-            text-transform: uppercase;
-            letter-spacing: 1px;
-        }
-
-        .lightbox-info p {
-            color: #FFE0B5;
-            font-size: 0.9rem;
-            margin-top: 0.3rem;
-        }
-
-        .lightbox-nav {
-            position: absolute;
-            top: 50%;
-            transform: translateY(-50%);
-            width: 50px;
-            height: 50px;
-            background: rgba(230, 92, 30, 0.3);
-            border: 2px solid #E65C1E;
-            border-radius: 50%;
-            cursor: pointer;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            transition: all 0.3s;
-            backdrop-filter: blur(8px);
-        }
-
-        .lightbox-nav:hover {
-            background: rgba(230, 92, 30, 0.6);
-            transform: translateY(-50%) scale(1.1);
-        }
-
-        .lightbox-nav i {
-            color: white;
-            font-size: 1.2rem;
-        }
-
-        .lightbox-prev { left: 20px; }
-        .lightbox-next { right: 20px; }
-
-        /* MULTIBRANDS */
-        .multibrands {
-            background: linear-gradient(135deg, #0c0704 0%, #261a10 100%);
-            padding: 1.8rem 1rem;
-            border-top: 2px solid #E65C1E;
-            border-bottom: 2px solid #E65C1E;
-            overflow: hidden;
-            position: relative;
-        }
-
-        .brands-header {
-            text-align: center;
-            margin-bottom: 1.5rem;
-        }
-
-        .brands-header h3 {
-            font-size: clamp(1.5rem, 6vw, 2.2rem);
-            font-weight: 800;
-            color: #FF8C42;
-            margin-bottom: 0.2rem;
-        }
-
-        .brands-header p {
-            color: #FADBAB;
-            font-size: 0.9rem;
-            font-weight: 500;
-        }
-
-        .brands-slider {
-            position: relative;
-            width: 100%;
-            overflow: hidden;
-            mask-image: linear-gradient(to right, transparent, black 5%, black 95%, transparent);
-            -webkit-mask-image: linear-gradient(to right, transparent, black 5%, black 95%, transparent);
-        }
-
-        .brands-track {
-            display: flex;
-            align-items: center;
-            gap: 1.5rem;
-            width: max-content;
-            animation: scrollLeft 25s linear infinite;
-            will-change: transform;
-        }
-
-        @keyframes scrollLeft {
-            0% { transform: translateX(0); }
-            100% { transform: translateX(-50%); }
-        }
-
-        .brands-slider:hover .brands-track {
-            animation-play-state: paused;
-        }
-
-        .brand-item {
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            justify-content: center;
-            background: rgba(0,0,0,0.65);
-            backdrop-filter: blur(3px);
-            border-radius: 1.8rem;
-            padding: 0.6rem 1.4rem;
-            min-width: 110px;
-            transition: all 0.3s cubic-bezier(0.34, 1.56, 0.64, 1);
-            border: 1px solid rgba(230,92,30,0.6);
-            cursor: default;
-        }
-
-        .brand-item i {
-            font-size: 1.6rem;
-            color: #FF8C42;
-            margin-bottom: 0.3rem;
-        }
-
-        .brand-item span {
-            font-size: 0.85rem;
-            font-weight: 700;
-            color: #fce3c2;
-            white-space: nowrap;
-        }
-
-        .brand-item:hover {
-            transform: translateY(-5px);
-            background: rgba(230,92,30,0.3);
-            box-shadow: 0 10px 25px -5px rgba(230,92,30,0.4);
-        }
-
-        /* INFO GRID - CORRIGIDO com animação de entrada suave */
-        .info-grid {
-            display: grid;
-            grid-template-columns: 1fr;
-            gap: 1.2rem;
-            padding: 1.8rem 1rem;
-            background: rgba(0,0,0,0.55);
-        }
-
-        .contact-item {
-            display: flex;
-            flex-direction: column;
-            align-items: flex-start;
-            gap: 0.4rem;
-            background: #1f160fe6;
-            padding: 1.2rem;
-            border-radius: 1.6rem;
-            box-shadow: 0 10px 18px -6px black;
-            transition: transform 0.3s cubic-bezier(0.34, 1.56, 0.64, 1), box-shadow 0.3s;
-            border: 1px solid rgba(230,92,30,0.4);
-            /* Garantia de visibilidade imediata, mas com leve animação ao rolar */
-            opacity: 0;
-            transform: translateY(20px);
-            transition: opacity 0.6s ease, transform 0.6s ease;
-        }
-        
-        .contact-item.visible {
-            opacity: 1;
-            transform: translateY(0);
-        }
-
-        .contact-item:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 20px 35px -10px rgba(230,92,30,0.4);
-        }
-
-        .icon-circle {
-            background: #0a0603;
-            width: 48px;
-            height: 48px;
-            border-radius: 50%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-size: 1.6rem;
-            color: #FF8C42;
-            border: 2px solid #E65C1E;
-            transition: all 0.3s;
-        }
-
-        .contact-item:hover .icon-circle {
-            background: #E65C1E;
-            color: white;
-            transform: scale(1.1) rotate(5deg);
-        }
-
-        .contact-item h3 {
-            font-size: 1.3rem;
-            font-weight: 700;
-            color: #FFB47B;
-        }
-
-        .contact-item a, .contact-item p {
-            font-size: 0.95rem;
-            text-decoration: none;
-            color: #f0e2d4;
-            font-weight: 500;
-            word-break: break-word;
-            transition: color 0.3s;
-        }
-
-        .contact-item a:hover {
-            color: #FF8C42;
-        }
-
-        .contact-item a i {
-            color: #FF8C42;
-            margin-right: 0.3rem;
-        }
-
-        .endereco-bloco p {
-            font-size: 0.9rem;
-            margin: 0.2rem 0;
-        }
-
-        /* MAPA */
-        .mapa-local {
-            padding: 0.8rem 1rem 1.8rem 1rem;
-            background: rgba(0,0,0,0.4);
-        }
-
-        .mapa-container {
-            background: #211810;
-            border-radius: 1.6rem;
-            padding: 1rem;
-            opacity: 0;
-            transform: translateY(20px);
-            transition: opacity 0.6s ease, transform 0.6s ease;
-        }
-        
-        .mapa-container.visible {
-            opacity: 1;
-            transform: translateY(0);
-        }
-
-        .mapa-titulo {
-            font-size: 1.2rem;
-            font-weight: 700;
-            color: #FFB47B;
-            margin-bottom: 0.8rem;
-            display: flex;
-            align-items: center;
-            gap: 0.5rem;
-        }
-
-        .mapa-frame {
-            border-radius: 1.2rem;
-            overflow: hidden;
-            border: 2px solid #E65C1E;
-            transition: box-shadow 0.3s;
-        }
-
-        .mapa-frame:hover {
-            box-shadow: 0 10px 30px -5px rgba(230,92,30,0.3);
-        }
-
-        .mapa-frame iframe {
-            width: 100%;
-            height: 220px;
-            border: 0;
-        }
-
-        .footer-note {
-            background: #0a0603;
-            color: #e9cba7;
-            text-align: center;
-            padding: 0.9rem;
-            font-size: 0.75rem;
-            border-top: 1px solid #E65C1E;
-        }
-
-        /* WHATSAPP FLOAT */
-        .whatsapp-float {
-            position: fixed;
-            bottom: 20px;
-            right: 16px;
-            width: 56px;
-            height: 56px;
-            background: linear-gradient(135deg, #25D366 0%, #128C7E 100%);
-            border-radius: 50%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            box-shadow: 0 6px 18px rgba(37, 211, 102, 0.45);
-            z-index: 1000;
-            text-decoration: none;
-            transition: transform 0.3s cubic-bezier(0.34, 1.56, 0.64, 1);
-            animation: pulse-wa 1.8s infinite;
-        }
-
-        .whatsapp-float:hover {
-            transform: scale(1.15);
-        }
-
-        .whatsapp-float:active {
-            transform: scale(0.95);
-        }
-
-        .whatsapp-float i {
-            color: white;
-            font-size: 1.9rem;
-        }
-
-        @keyframes pulse-wa {
-            0%, 100% { box-shadow: 0 6px 18px rgba(37, 211, 102, 0.5), 0 0 0 0 rgba(37, 211, 102, 0.4); }
-            50% { box-shadow: 0 6px 18px rgba(37, 211, 102, 0.6), 0 0 0 15px rgba(37, 211, 102, 0); }
-        }
-
-        @media (min-width: 768px) {
-            .info-grid {
-                grid-template-columns: repeat(3, 1fr);
-                gap: 1.8rem;
-                padding: 2rem 2rem;
-            }
-            .hero {
-                padding: 2rem 2rem;
-            }
-            .gallery-section {
-                padding: 2rem 2rem 2.5rem;
-            }
-            .multibrands {
-                padding: 2rem;
-            }
-            .mapa-local {
-                padding: 1rem 2rem 2rem;
-            }
-            .brand-item {
-                min-width: 120px;
-                padding: 0.7rem 1.5rem;
-            }
-            .brand-item span {
-                font-size: 1rem;
-            }
-            .whatsapp-float {
-                width: 68px;
-                height: 68px;
-                bottom: 30px;
-                right: 30px;
-            }
-            .whatsapp-float i {
-                font-size: 2.3rem;
-            }
-            .empilhadeira-img {
-                max-width: 280px;
-            }
-            .banner-title {
-                font-size: 1.2rem;
-            }
-            .banner-phone {
-                font-size: 1.1rem;
-                padding: 0.4rem 1.2rem;
-            }
-            .banner-badge {
-                font-size: 0.8rem;
-            }
-        }
-
-        @media (max-width: 900px) {
-            .gallery-grid {
-                grid-template-columns: repeat(2, 1fr);
-                gap: 1.2rem;
-            }
-        }
-
-        @media (max-width: 580px) {
-            .gallery-grid {
-                grid-template-columns: 1fr;
-                gap: 1.2rem;
-            }
-            .hero {
-                flex-direction: column;
-                text-align: center;
-            }
-            .brand {
-                justify-content: center;
-            }
-            .logo-principal {
-                max-width: 280px;
-                margin: 0 auto;
-            }
-            .empilhadeira-img {
-                max-width: 240px;
-                margin-left: auto;
-                margin-right: auto;
-            }
-            .banner-title-wrapper i {
-                font-size: 1.2rem;
-            }
-            .banner-title {
-                font-size: 1rem;
-            }
-            .banner-phone {
-                font-size: 0.9rem;
-                padding: 0.3rem 0.8rem;
-            }
-            .banner-badge {
-                font-size: 0.7rem;
-                padding: 0.2rem 0.7rem;
-            }
-            .lightbox-nav {
-                width: 40px;
-                height: 40px;
-            }
-            .lightbox-prev { left: 10px; }
-            .lightbox-next { right: 10px; }
-        }
-
-        @media (prefers-reduced-motion: reduce) {
-            .gallery-item {
-                animation: none;
-                opacity: 1;
-                transform: none;
-            }
-            .whatsapp-float, .banner-badge {
-                animation: none;
-            }
-            .gallery-item:hover img, .gallery-item:hover {
-                transform: none;
-            }
-            .brands-track {
-                animation: none;
-                transform: translateX(0);
-                flex-wrap: wrap;
-                justify-content: center;
-            }
-            .brands-slider {
-                overflow-x: auto;
-                mask-image: none;
-            }
-            .contact-item, .mapa-container {
-                opacity: 1;
-                transform: none;
-                transition: none;
-            }
-        }
-    </style>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no">
+  <meta name="description" content="Marlift Empilhadeiras: manutenção preventiva e corretiva 24hs chamados emergencial, peças originais, lavagem especializada e conformidade NR12 para empilhadeiras elétricas, GLP e diesel. Atendimento em Santana de Parnaíba - SP.">
+  <meta name="keywords" content="manutenção empilhadeiras, peças empilhadeiras, NR12, atendimento 24hs chamdos emergencial, Marlift">
+  
+  <!-- Favicon -->
+  <link rel="icon" href="https://iili.io/BcXKIPj.png" type="image/png">
+  
+  <!-- Open Graph -->
+  <meta property="og:title" content="Marlift | Manutenção de Empilhadeiras 24hs">
+  <meta property="og:description" content="Especialistas em manutenção preventiva, corretiva, lavagem, lubrificações e peças originais. Atendimento emergencial 24hs em Santana de Parnaíba - SP.">
+  <meta property="og:image" content="https://iili.io/Bu8LCW7.png">
+  <meta property="og:url" content="https://www.marlift.com.br">
+  <meta property="og:type" content="website">
+
+  <title>Marlift | Manutenção de Empilhadeiras 24hs chamdos emergencial - Serviços e Peças</title>
+
+  <style>
+    * { box-sizing: border-box; }
+
+    body {
+      margin: 0;
+      font-family: 'Segoe UI', Arial, sans-serif;
+      background-color: #0d0d0d;
+      color: #fff;
+      line-height: 1.6;
+    }
+
+    /* HEADER */
+    header {
+      background: #000;
+      padding: 20px;
+      border-bottom: 2px solid #ff6a00;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      flex-wrap: wrap;
+      gap: 15px;
+    }
+
+    /* Logo */
+    .logo img {
+      max-width: 280px;
+      height: auto;
+      display: block;
+      transition: transform 0.2s ease;
+    }
+    .logo img:hover {
+      transform: scale(1.02);
+    }
+
+    /* BANNER ANUNCIE AQUI */
+    .banner-anuncie {
+      width: 600px;
+      max-width: 100%;
+      height: 90px;
+      background: linear-gradient(135deg, #2c2c2c, #1a1a1a);
+      border-radius: 8px;
+      display: block;
+      text-decoration: none;
+      transition: all 0.2s ease;
+      border: 1px solid #ff6a00;
+      box-shadow: 0 2px 6px rgba(0,0,0,0.3);
+      overflow: hidden;
+    }
+    .banner-anuncie:hover {
+      background: linear-gradient(135deg, #3a3a3a, #252525);
+      border-color: #ff8c33;
+      transform: scale(0.99);
+    }
+
+    .banner-anuncie picture {
+      width: 100%;
+      height: 100%;
+      display: block;
+    }
+    .banner-anuncie img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      object-position: center;
+    }
+
+    /* RESPONSIVIDADE MOBILE HEADER */
+    @media (max-width: 800px) {
+      header {
+        flex-direction: column;
+        align-items: stretch;
+        text-align: center;
+      }
+      .logo {
+        text-align: center;
+      }
+      .banner-anuncie {
+        width: 100%;
+        margin-top: 5px;
+        height: auto;
+        aspect-ratio: 16 / 9;
+      }
+    }
+
+    /* BANNER PRINCIPAL */
+    .banner {
+      background: linear-gradient(90deg, #000, #ff6a00);
+      padding: 30px 20px;
+      text-align: center;
+    }
+
+    .banner h1 {
+      margin: 0;
+      font-size: 32px;
+      text-shadow: 1px 1px 2px rgba(0,0,0,0.5);
+      letter-spacing: -0.3px;
+    }
+
+    .container {
+      padding: 30px 20px 40px;
+      max-width: 1200px;
+      margin: auto;
+    }
+
+    .section {
+      margin-bottom: 45px;
+    }
+
+    .section h2 {
+      color: #ff6a00;
+      margin-bottom: 20px;
+      border-left: 4px solid #ff6a00;
+      padding-left: 15px;
+    }
+
+    .services {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 30px;
+    }
+
+    .card {
+      background: #1a1a1a;
+      border-radius: 16px;
+      padding: 20px;
+      box-shadow: 0 8px 20px rgba(0,0,0,0.3);
+      transition: transform 0.3s, box-shadow 0.3s;
+      display: flex;
+      flex-direction: column;
+    }
+
+    .card:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 12px 25px rgba(255,106,0,0.2);
+    }
+
+    .card img {
+      width: 100%;
+      aspect-ratio: 16 / 9;
+      object-fit: contain;
+      background-color: #1a1a1a;
+      border-radius: 12px;
+      margin-bottom: 15px;
+    }
+
+    .card h3 {
+      margin: 0 0 10px;
+      color: #ff6a00;
+    }
+
+    .card p {
+      margin: 0;
+      flex-grow: 1;
+    }
+
+    .brands-section {
+      margin: 40px 0;
+      text-align: center;
+    }
+
+    .brands-title {
+      font-size: 1.6rem;
+      font-weight: bold;
+      margin-bottom: 25px;
+      color: #ff6a00;
+    }
+
+    .brands-image-wrapper {
+      max-width: 100%;
+      overflow-x: auto;
+      text-align: center;
+    }
+
+    .brands-composite {
+      max-width: 100%;
+      height: auto;
+      border-radius: 28px;
+      transition: filter 0.3s ease;
+      filter: grayscale(0%);
+      box-shadow: 0 5px 15px rgba(0,0,0,0.3);
+    }
+
+    .brands-composite:hover {
+      filter: grayscale(100%);
+    }
+
+    .images-double {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+      gap: 25px;
+      margin-top: 20px;
+    }
+
+    .images-double img {
+      width: 100%;
+      aspect-ratio: 16 / 9;
+      object-fit: contain;
+      background-color: #1a1a1a;
+      border-radius: 16px;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.4);
+    }
+
+    /* Seção de Mapa */
+    .map-section {
+      margin-bottom: 20px;
+    }
+    
+    .map-container {
+      position: relative;
+      width: 100%;
+      height: 350px;
+      border-radius: 16px;
+      overflow: hidden;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.4);
+      border: 2px solid #333;
+    }
+
+    .map-container iframe {
+      width: 100%;
+      height: 100%;
+      border: 0;
+      filter: grayscale(80%) invert(92%) contrast(90%);
+    }
+
+    /* BLOCO CTA */
+    .cta {
+      text-align: center;
+      margin-top: 20px;
+      background: #111;
+      padding: 25px 20px;
+      border-radius: 24px;
+      transition: background 0.2s;
+    }
+    .cta:hover {
+      background: #1a1a1a;
+    }
+
+    .cta p {
+      font-size: 1.3rem;
+      margin-bottom: 18px;
+    }
+
+    .btn-whatsapp {
+      background: #25D366;
+      color: #fff;
+      padding: 14px 32px;
+      text-decoration: none;
+      border-radius: 50px;
+      font-weight: bold;
+      font-size: 1.1rem;
+      display: inline-flex;
+      align-items: center;
+      gap: 12px;
+      transition: background 0.2s, transform 0.1s;
+      box-shadow: 0 4px 12px rgba(37,211,102,0.3);
+    }
+
+    .btn-whatsapp:hover {
+      background: #1ebe5d;
+      transform: scale(1.02);
+    }
+
+    .btn-whatsapp svg {
+      width: 24px;
+      height: 24px;
+      fill: white;
+    }
+
+    /* ESTILO DO FORMULÁRIO (NOVO) */
+    .form-section {
+      background: #111;
+      padding: 30px;
+      border-radius: 20px;
+      border: 1px solid #333;
+      margin-top: 40px;
+      box-shadow: 0 8px 20px rgba(0,0,0,0.2);
+    }
+
+    .form-section h2 {
+      text-align: center;
+      margin-top: 0;
+      margin-bottom: 25px;
+      border-left: none;
+      color: #fff;
+    }
+    .form-section h2 span {
+      color: #ff6a00;
+    }
+
+    #whatsAppForm {
+      display: flex;
+      flex-direction: column;
+      gap: 15px;
+      max-width: 500px;
+      margin: 0 auto;
+    }
+
+    .form-group input {
+      width: 100%;
+      padding: 14px 18px;
+      border-radius: 10px;
+      border: 1px solid #444;
+      background-color: #000;
+      color: #fff;
+      font-size: 1rem;
+      outline: none;
+      transition: border-color 0.3s, box-shadow 0.3s;
+    }
+
+    .form-group input::placeholder {
+      color: #777;
+    }
+
+    .form-group input:focus {
+      border-color: #ff6a00;
+      box-shadow: 0 0 0 2px rgba(255, 106, 0, 0.2);
+    }
+
+    .btn-submit-form {
+      background: #ff6a00;
+      color: #fff;
+      padding: 14px;
+      border: none;
+      border-radius: 50px;
+      font-size: 1.1rem;
+      font-weight: bold;
+      cursor: pointer;
+      transition: background 0.2s, transform 0.1s;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 10px;
+    }
+
+    .btn-submit-form:hover {
+      background: #e05e00;
+      transform: scale(1.02);
+    }
+
+    footer {
+      background: #000;
+      padding: 30px 20px;
+      text-align: center;
+      font-size: 0.9rem;
+      color: #ccc;
+      border-top: 2px solid #ff6a00;
+    }
+
+    /* Botão flutuante */
+    .whatsapp-float {
+      position: fixed;
+      bottom: 24px;
+      right: 24px;
+      background: #25D366;
+      color: white;
+      border-radius: 60px;
+      padding: 12px 22px;
+      font-weight: bold;
+      text-decoration: none;
+      box-shadow: 0 6px 18px rgba(0,0,0,0.3);
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      z-index: 1000;
+      font-size: 1rem;
+      transition: 0.2s;
+      font-family: inherit;
+    }
+
+    .whatsapp-float:hover {
+      background: #128C7E;
+      transform: scale(1.03);
+    }
+
+    .whatsapp-float svg {
+      width: 22px;
+      height: 22px;
+      fill: white;
+    }
+
+    @media (max-width: 640px) {
+      .banner h1 { font-size: 1.6rem; }
+      .banner { padding: 22px 16px; }
+      .whatsapp-float {
+        padding: 10px 18px;
+        font-size: 0.85rem;
+        gap: 8px;
+        bottom: 16px;
+        right: 16px;
+      }
+      .cta p { font-size: 1.1rem; }
+      .brands-title { font-size: 1.3rem; }
+      .map-container { height: 280px; }
+      .container { padding: 20px 16px 30px; }
+      .cta { margin-top: 15px; padding: 20px 16px; }
+      .map-section { margin-bottom: 15px; }
+      .form-section { padding: 20px; }
+    }
+  </style>
 </head>
+
 <body>
-    <canvas class="bg-canvas" id="bgCanvas" aria-hidden="true"></canvas>
-    <div class="bg-gradient-overlay" aria-hidden="true"></div>
 
-    <a href="https://wa.me/5511913268620?text=Olá! Gostaria de mais informações sobre os serviços da MARLIFT." 
-       target="_blank" class="whatsapp-float" title="Fale conosco pelo WhatsApp" rel="noopener noreferrer" aria-label="Contato WhatsApp">
-        <i class="fa-brands fa-whatsapp" aria-hidden="true"></i>
-    </a>
+<header>
+  <div class="logo">
+    <img src="https://iili.io/BYsF0ns.png" alt="Logo Marlift Empilhadeiras - manutenção especializada">
+  </div>
+  
+  <!-- BANNER ANUNCIE AQUI -->
+  <a href="https://wa.me/5598988248877?text=Olá! Gostaria de Anunciar no site Marlift Empilhadeiras." class="banner-anuncie" aria-label="Espaço para anúncio - contate-nos">
+    <picture>
+      <source media="(max-width: 800px)" srcset="https://iili.io/Bl4mVVt.png">
+      <img src="https://iili.io/Bcauo7t.png" alt="Anúncio Banner">
+    </picture>
+  </a>
+</header>
 
-    <div class="contact-card">
-        <header class="hero">
-            <div class="brand">
-                <div class="logo-principal">
-                    <img src="https://iili.io/BoxWvNn.png" alt="MARLIFT EMPILHADEIRAS - Logo oficial" loading="eager">
-                </div>
-            </div>
-            <div class="empilhadeira-img">
-                <a href="https://wa.me/5511913268620?text=🚨%20EMERGÊNCIA%20MARLIFT%20-%20Preciso%20de%20atendimento%20*URGENTE*%20para%20minha%20empilhadeira!%20(Chamado%2024hs)" 
-                   target="_blank" rel="noopener noreferrer" class="wa-emergency-banner" aria-label="Emergência 24 horas WhatsApp">
-                    <div class="banner-title-wrapper">
-                        <i class="fa-brands fa-whatsapp" aria-hidden="true"></i>
-                        <span class="banner-title">ATENDIMENTO 24hs</span>
-                    </div>
-                    <div class="banner-sub">Emergências e Suporte Técnico Imediato</div>
-                    <div class="banner-phone">
-                        <i class="fa-brands fa-whatsapp" aria-hidden="true"></i> (11) 9 1326-8620
-                    </div>
-                    <div class="banner-badge">
-                        <i class="fa-regular fa-clock" aria-hidden="true"></i> Plantão 24hs • Chame agora
-                    </div>
-                </a>
-            </div>
-        </header>
+<!-- BANNER PRINCIPAL -->
+<section class="banner">
+  <h1>Operação contínua da sua frota começa com a manutenção certa</h1>
+</section>
 
-        <section class="gallery-section" aria-labelledby="gallery-title">
-            <div class="gallery-title">
-                <h2 id="gallery-title">Nossos Serviços</h2>
-                <p>Manutenção preventiva, corretiva e chamados emergenciais 24hs</p>
-            </div>
-            <div class="gallery-grid" role="list">
-                <article class="gallery-item" role="listitem" tabindex="0" data-title="Lavagem e Lubrificação" data-desc="Cuide da sua frota e evite prejuízos.">
-                    <img src="https://iili.io/B5qu9SV.png" alt="Manutenção elétrica em empilhadeiras" loading="lazy">
-                    <div class="icon-badge"><i class="fa-solid fa-bolt" aria-hidden="true"></i></div>
-                    <div class="overlay">
-                        <h4>Lavagem e Lubrificação</h4><p>Sua empilhadeira é o motor da sua logística.</p></div>
-                </article>
-                <article class="gallery-item" role="listitem" tabindex="0" data-title="Hidráulica Completa" data-desc="Válvulas, mangueiras, cilindros">
-                    <img src="https://iili.io/BTyhkKJ.png" alt="Sistema hidráulico e cilindros" loading="lazy">
-                    <div class="icon-badge"><i class="fa-solid fa-oil-can" aria-hidden="true"></i></div>
-                    <div class="overlay"><h4>Hidráulica Completa</h4><p>Válvulas, mangueiras, cilindros</p></div>
-                </article>
-                <article class="gallery-item" role="listitem" tabindex="0" data-title="Peças Genuínas" data-desc="Conversão, segurança e manutenção de sistema a gás">
-                    <img src="https://iili.io/BTyhPoX.png" alt="Kit Gás GLP para empilhadeiras" loading="lazy">
-                    <div class="icon-badge"><i class="fa-solid fa-fire-flame-curved" aria-hidden="true"></i></div>
-                    <div class="overlay"><h4>Peças Genuínas</h4><p>Conversão, segurança e manutenção de sistema a gás</p></div>
-                </article>
-                <article class="gallery-item" role="listitem" tabindex="0" data-title="Multimarcas" data-desc="Diagnóstico avançado e peças originais">
-                    <img src="https://iili.io/BTyhiVn.png" alt="Manutenção multimarcas especializada" loading="lazy">
-                    <div class="icon-badge"><i class="fa-solid fa-microchip" aria-hidden="true"></i></div>
-                    <div class="overlay"><h4>Multimarcas</h4><p>Diagnóstico avançado e peças originais</p></div>
-                </article>
-                <article class="gallery-item" role="listitem" tabindex="0" data-title="Atendimento 24hs" data-desc="Chamados emergenciais 24hs">
-                    <img src="https://iili.io/Bu8LFR4.png" alt="Equipe técnica realizando manutenção preventiva" loading="lazy">
-                    <div class="icon-badge"><i class="fa-solid fa-wrench" aria-hidden="true"></i></div>
-                    <div class="overlay"><h4>Atendimento 24hs</h4><p>Chamados emergenciais 24hs</p></div>
-                </article>
-                <article class="gallery-item" role="listitem" tabindex="0" data-title="Inspeção e Segurança" data-desc="Laudo de segurança, freios, direção e estrutura">
-                    <img src="https://iili.io/BTbvi8v.png" alt="Inspeção de segurança e freios" loading="lazy">
-                    <div class="icon-badge"><i class="fa-solid fa-clipboard-list" aria-hidden="true"></i></div>
-                    <div class="overlay"><h4>Inspeção e Segurança</h4><p>Laudo de segurança, freios, direção e estrutura</p></div>
-                </article>
-                <article class="gallery-item" role="listitem" tabindex="0" data-title="Motor e Transmissão" data-desc="Revisão completa, embreagem, caixa de câmbio">
-                    <img src="https://iili.io/BuHN29f.png" alt="Manutenção de motor e transmissão" loading="lazy">
-                    <div class="icon-badge"><i class="fa-solid fa-engine" aria-hidden="true"></i></div>
-                    <div class="overlay"><h4>Motor e Transmissão</h4><p>Revisão completa, embreagem, caixa de câmbio</p></div>
-                </article>
-                <article class="gallery-item" role="listitem" tabindex="0" data-title="Freios e Rodagem" data-desc="Pastilhas, discos, pneus e alinhamento">
-                    <img src="https://iili.io/B5qTycQ.png" alt="Sistema de freios e rodas" loading="lazy">
-                    <div class="icon-badge"><i class="fa-solid fa-tire" aria-hidden="true"></i></div>
-                    <div class="overlay"><h4>Freios e Rodagem</h4><p>Pastilhas, discos, pneus e alinhamento</p></div>
-                </article>
-                <article class="gallery-item" role="listitem" tabindex="0" data-title="Reforma de Empilhadeiras" data-desc="Lanternagem, Pintura Completa">
-                    <img src="https://iili.io/BTtgnV9.png" alt="Reforma de Empilhadeiras" loading="lazy">
-                    <div class="icon-badge"><i class="fa-solid fa-computer" aria-hidden="true"></i></div>
-                    <div class="overlay"><h4>Reforma de Empilhadeiras</h4><p>Lanternagem, Pintura Completa</p></div>
-                </article>
-            </div>
-        </section>
+<div class="container">
 
-        <section class="multibrands" aria-labelledby="brands-title">
-            <div class="brands-header">
-                <h3 id="brands-title">MULTIMARCAS</h3>
-                <p>As maiores marcas do segmento mundial</p>
-            </div>
-            <div class="brands-slider" role="region" aria-label="Marcas atendidas">
-                <div class="brands-track">
-                    <div class="brand-item"><i class="fa-solid fa-industry" aria-hidden="true"></i><span>TOYOTA</span></div>
-                    <div class="brand-item"><i class="fa-solid fa-truck-moving" aria-hidden="true"></i><span>HYSTER</span></div>
-                    <div class="brand-item"><i class="fa-solid fa-cubes" aria-hidden="true"></i><span>YALE</span></div>
-                    <div class="brand-item"><i class="fa-solid fa-gear" aria-hidden="true"></i><span>STILL</span></div>
-                    <div class="brand-item"><i class="fa-solid fa-bolt" aria-hidden="true"></i><span>LINDE</span></div>
-                    <div class="brand-item"><i class="fa-solid fa-crown" aria-hidden="true"></i><span>CROWN</span></div>
-                    <div class="brand-item"><i class="fa-solid fa-car" aria-hidden="true"></i><span>HYUNDAI</span></div>
-                    <div class="brand-item"><i class="fa-solid fa-industry" aria-hidden="true"></i><span>KOMATSU</span></div>
-                    <div class="brand-item"><i class="fa-solid fa-truck-ramp-box" aria-hidden="true"></i><span>CLARK</span></div>
-                    <div class="brand-item"><i class="fa-solid fa-charging-station" aria-hidden="true"></i><span>HELI</span></div>
-                    <div class="brand-item"><i class="fa-solid fa-industry" aria-hidden="true"></i><span>TOYOTA</span></div>
-                    <div class="brand-item"><i class="fa-solid fa-truck-moving" aria-hidden="true"></i><span>HYSTER</span></div>
-                    <div class="brand-item"><i class="fa-solid fa-cubes" aria-hidden="true"></i><span>YALE</span></div>
-                    <div class="brand-item"><i class="fa-solid fa-gear" aria-hidden="true"></i><span>STILL</span></div>
-                    <div class="brand-item"><i class="fa-solid fa-bolt" aria-hidden="true"></i><span>LINDE</span></div>
-                    <div class="brand-item"><i class="fa-solid fa-crown" aria-hidden="true"></i><span>CROWN</span></div>
-                    <div class="brand-item"><i class="fa-solid fa-car" aria-hidden="true"></i><span>HYUNDAI</span></div>
-                    <div class="brand-item"><i class="fa-solid fa-industry" aria-hidden="true"></i><span>KOMATSU</span></div>
-                    <div class="brand-item"><i class="fa-solid fa-truck-ramp-box" aria-hidden="true"></i><span>CLARK</span></div>
-                    <div class="brand-item"><i class="fa-solid fa-charging-station" aria-hidden="true"></i><span>HELI</span></div>
-                </div>
-            </div>
-        </section>
+  <div class="section">
+    <p><strong>Manutenção preventiva, corretiva e chamados emergenciais 24hs</strong></p>
+    <p>A <strong>Marlift Empilhadeiras</strong> é especialista em Serviços e Peças para empilhadeiras elétricas, GLP e diesel. Com atendimento 24hs emergencial e suporte técnico imediato, garantimos a disponibilidade da sua frota e conformidade com a NR12.</p>
+  </div>
 
-        <section class="info-grid" aria-label="Informacoes de contato">
-            <article class="contact-item">
-                <div class="icon-circle"><i class="fa-brands fa-whatsapp" aria-hidden="true"></i></div>
-                <h3>WhatsApp</h3>
-                <a href="https://wa.me/5511913268620?text=Olá! Gostaria de mais informações sobre os serviços da MARLIFT." target="_blank" rel="noopener noreferrer">
-                    <i class="fa-brands fa-whatsapp" aria-hidden="true"></i> (11) 9 1326-8620
-                </a>
-                <span style="font-size: 0.7rem; color: #e6bc8c;">atendimento 24h emergência</span>
-            </article>
-            <article class="contact-item">
-                <div class="icon-circle"><i class="fa-regular fa-envelope" aria-hidden="true"></i></div>
-                <h3>E-mail</h3>
-                <a href="mailto:contato@marlift.com.br"><i class="fa-regular fa-envelope" aria-hidden="true"></i> contato@marlift.com.br</a>
-                <span style="font-size: 0.7rem; color: #e6bc8c;">orçamentos e suporte técnico</span>
-            </article>
-            <article class="contact-item">
-                <div class="icon-circle"><i class="fa-regular fa-building" aria-hidden="true"></i></div>
-                <h3>Endereço</h3>
-                <div class="endereco-bloco">
-                    <p><i class="fa-regular fa-map" aria-hidden="true"></i> Rua Maria Fernanda N 279</p>
-                    <p><i class="fa-regular fa-compass" aria-hidden="true"></i> Chácaras Maria Inês</p>
-                    <p><i class="fa-regular fa-city" aria-hidden="true"></i> Santana de Parnaíba - SP</p>
-                    <p><i class="fa-solid fa-location-dot" aria-hidden="true"></i> CEP: 06.516-010</p>
-                </div>
-            </article>
-        </section>
-
-        <section class="mapa-local" aria-label="Localizacao no mapa">
-            <div class="mapa-container">
-                <div class="mapa-titulo">
-                    <i class="fa-regular fa-map" aria-hidden="true"></i>
-                    <span>Onde estamos - fácil acesso</span>
-                </div>
-                <div class="mapa-frame">
-                    <iframe 
-                        src="https://www.google.com/maps?q=Rua+Maria+Fernanda+279,+Chacaras+Maria+Ines,+Santana+de+Parnaiba+-+SP&z=17&output=embed" 
-                        allowfullscreen="" loading="lazy" title="Localizacao MARLIFT">
-                    </iframe>
-                </div>
-                <p style="margin-top: 0.7rem; color: #FFCFA5; font-weight: 500; font-size: 0.8rem;">
-                    <i class="fa-regular fa-circle-check" style="color:#E65C1E;" aria-hidden="true"></i> 
-                    Chácaras Maria Inês, Santana de Parnaíba – estrutura para atender sua frota
-                </p>
-            </div>
-        </section>
-
-        <footer class="footer-note">
-            <i class="fa-regular fa-clock" aria-hidden="true"></i> Atendimento 24hs emergência | <strong>MARLIFT EMPILHADEIRAS</strong> – Manutenção em geral, peças e lavagem de empilhadeiras
-        </footer>
+  <div class="section">
+    <h2>📌 Nossos Serviços Especializados</h2>
+    <div class="services">
+      <!-- Card 1 -->
+      <div class="card">
+        <img src="https://iili.io/Bc6krnj.png" alt="Manutenção preventiva em empilhadeira" loading="lazy">
+        <h3>🔧 Preventiva</h3>
+        <p>Inspeções, lubrificações, calibrações e troca de fluidos para evitar falhas e paradas inesperadas.</p>
+      </div>
+      <!-- Card 2 -->
+      <div class="card">
+        <img src="https://iili.io/B0HwypR.png" alt="Reparo corretivo em motor hidráulico" loading="lazy">
+        <h3>🛠️ Corretiva</h3>
+        <p>Reparos em componentes danificados, vazamentos hidráulicos, motores e sistemas elétricos.</p>
+      </div>
+      <!-- Card 3 -->
+      <div class="card">
+        <img src="https://iili.io/B0Hwpkv.png" alt="Inspeção NR12 em empilhadeira" loading="lazy">
+        <h3>📄 Contratos NR12</h3>
+        <p>Atendimento em campo ou oficina, garantindo conformidade total com a norma regulamentadora NR12.</p>
+      </div>
+      <!-- Card 4 -->
+      <div class="card">
+        <img src="https://iili.io/BcmK0OX.png" alt="Peças originais para empilhadeiras" loading="lazy">
+        <h3>🔩 Peças Originais</h3>
+        <p>Fornecimento de componentes genuínos para Toyota, Linde, Hyster, Yale e outras marcas.</p>
+      </div>
+      <!-- Card 5 -->
+      <div class="card">
+        <img src="https://iili.io/Bcm2bs4.png" alt="Lavagem técnica de empilhadeira" loading="lazy">
+        <h3>💧 Lavagem & Lubrificação</h3>
+        <p>Higienização e lubrificação específica para aumentar a vida útil com segurança.</p>
+      </div>
+      <!-- Card 6 -->
+      <div class="card">
+        <img src="https://iili.io/Bcm3mTg.png" alt="Atendimento emergencial 24 horas" loading="lazy">
+        <h3>🚨 Emergência 24hs</h3>
+        <p>Suporte técnico imediato para reduzir paradas inesperadas – dia e noite, incluindo finais de semana e feriados.</p>
+      </div>
     </div>
-
-    <!-- LIGHTBOX -->
-    <div class="lightbox" id="lightbox" role="dialog" aria-modal="true" aria-label="Visualizador de imagem">
-        <button class="lightbox-nav lightbox-prev" aria-label="Imagem anterior">
-            <i class="fa-solid fa-chevron-left" aria-hidden="true"></i>
-        </button>
-        <div class="lightbox-content">
-            <button class="lightbox-close" aria-label="Fechar visualizador">
-                <i class="fa-solid fa-xmark" aria-hidden="true"></i>
-            </button>
-            <img src="" alt="Imagem ampliada" id="lightbox-img">
-            <div class="lightbox-info">
-                <h4 id="lightbox-title"></h4>
-                <p id="lightbox-desc"></p>
-            </div>
-        </div>
-        <button class="lightbox-nav lightbox-next" aria-label="Proxima imagem">
-            <i class="fa-solid fa-chevron-right" aria-hidden="true"></i>
-        </button>
+  </div>
+  
+  <!-- Seção de marcas -->
+  <section class="brands-section">
+    <p class="brands-title">🏭 Trabalhamos com as principais marcas do mercado</p>
+    <div class="brands-image-wrapper">
+      <img src="https://iili.io/BYv2YAB.webp" alt="Logotipos Toyota, Linde, Hyster, Yale" class="brands-composite" loading="lazy">
     </div>
+  </section>
 
-    <script>
-        // ========== CANVAS DE FUNDO ==========
-        const canvas = document.getElementById('bgCanvas');
-        const ctx = canvas.getContext('2d');
-        let particles = [];
-        let animationId = null;
-        let mouseX = 0, mouseY = 0;
-        const prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  <div class="section">
+    <h2>🧼 Cuidados completos com sua frota</h2>
+    <p>Além da manutenção preventiva e corretiva, realizamos lavagem de alta pressão, desengraxe e lubrificação especializada para modelos elétricos, GLP e diesel. Tudo para garantir performance e segurança.</p>
+    <div class="images-double">
+      <img src="https://iili.io/Bl4mVVt.png" alt="Lavagem de empilhadeira em serviço" loading="lazy">
+      <img src="https://iili.io/BcPNVWv.png" alt="Lubrificação de componentes" loading="lazy">
+    </div>
+  </div>
 
-        class Particle {
-            constructor() {
-                this.reset();
-            }
-            reset() {
-                this.x = Math.random() * canvas.width;
-                this.y = Math.random() * canvas.height;
-                this.size = Math.max(1, Math.random() * 2.5);
-                this.speedX = (Math.random() - 0.5) * 0.3;
-                this.speedY = (Math.random() - 0.5) * 0.3;
-                this.opacity = Math.random() * 0.5 + 0.2;
-                this.hue = Math.random() * 30 + 15;
-            }
-            update() {
-                this.x += this.speedX;
-                this.y += this.speedY;
-                const dx = mouseX - this.x;
-                const dy = mouseY - this.y;
-                const dist = Math.sqrt(dx * dx + dy * dy);
-                if (dist < 100) {
-                    const force = (100 - dist) / 100;
-                    this.x -= dx * force * 0.02;
-                    this.y -= dy * force * 0.02;
-                }
-                if (this.x < 0) this.x = canvas.width;
-                if (this.x > canvas.width) this.x = 0;
-                if (this.y < 0) this.y = canvas.height;
-                if (this.y > canvas.height) this.y = 0;
-            }
-            draw() {
-                ctx.beginPath();
-                ctx.arc(this.x, this.y, Math.max(0.5, this.size), 0, Math.PI * 2);
-                ctx.fillStyle = `hsla(${this.hue}, 90%, 55%, ${this.opacity})`;
-                ctx.fill();
-            }
-        }
+  <!-- Localização -->
+  <div class="section map-section">
+    <h2>📍 Nossa Localização</h2>
+    <p>Estamos em Santana de Parnaíba - SP, prontos para atender sua empresa com agilidade.</p>
+    <div class="map-container">
+      <iframe 
+        src="https://www.google.com/maps?q=Rua+Maria+Fernanda+279,+Chacaras+Maria+Ines,+Santana+de+Parnaiba+-+SP&z=17&output=embed" 
+        allowfullscreen="" loading="lazy" title="Localizacao MARLIFT - estrutura para atendimento">
+      </iframe>
+    </div>
+    <p style="margin-top: 0.7rem; color: #FFCFA5; font-weight: 500; font-size: 0.8rem;">
+      Chácaras Maria Inês, Santana de Parnaíba – SP
+    </p>
+  </div>
 
-        function resizeCanvas() {
-            canvas.width = window.innerWidth;
-            canvas.height = window.innerHeight;
-        }
+  <!-- NOVA SEÇÃO: Formulário de Contato -->
+  <div class="form-section">
+    <h2>📧 Fale Conosco <span>Diretamente</span></h2>
+    <form id="whatsAppForm">
+      <div class="form-group">
+        <input type="text" id="nome" placeholder="Nome" required>
+      </div>
+      <div class="form-group">
+        <input type="email" id="email" placeholder="E-mail" required>
+      </div>
+      <div class="form-group">
+        <input type="tel" id="telefone" placeholder="Telefone (com DDD)" required>
+      </div>
+      <button type="button" class="btn-submit-form" onclick="enviarMensagem()">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="20" height="20" fill="white">
+          <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/>
+        </svg>
+        Iniciar Conversa no WhatsApp
+      </button>
+    </form>
+  </div>
 
-        function initParticles() {
-            particles = [];
-            const particleCount = Math.min(80, Math.floor((canvas.width * canvas.height) / 15000));
-            for (let i = 0; i < particleCount; i++) {
-                particles.push(new Particle());
-            }
-        }
+</div>
 
-        function animateParticles() {
-            if (!ctx) return;
-            ctx.clearRect(0, 0, canvas.width, canvas.height);
-            particles.forEach(particle => {
-                particle.update();
-                particle.draw();
-            });
-            particles.forEach((p1, i) => {
-                particles.slice(i + 1).forEach(p2 => {
-                    const dx = p1.x - p2.x;
-                    const dy = p1.y - p2.y;
-                    const dist = Math.sqrt(dx * dx + dy * dy);
-                    if (dist < 120) {
-                        ctx.beginPath();
-                        ctx.moveTo(p1.x, p1.y);
-                        ctx.lineTo(p2.x, p2.y);
-                        ctx.strokeStyle = `rgba(230, 92, 30, ${0.15 * (1 - dist / 120)})`;
-                        ctx.lineWidth = 0.5;
-                        ctx.stroke();
-                    }
-                });
-            });
-            animationId = requestAnimationFrame(animateParticles);
-        }
+<footer>
+  <p>🌐 www.marlift.com.br | 📧 contato@marlift.com.br</p>
+  <p>📞 WhatsApp comercial: (11) 9 1326-8620 | Atendimento 24hs emergencial</p>
+  <p>CNPJ: 65.707.636/0001-13 – Santana de Parnaíba/SP</p>
+  <p style="font-size:0.75rem; margin-top:12px;">© 2025 Marlift Empilhadeiras – Soluções técnicas para operação contínua</p>
+</footer>
 
-        if (!prefersReducedMotion) {
-            resizeCanvas();
-            initParticles();
-            animateParticles();
-        }
+<!-- Botão flutuante WhatsApp -->
+<a class="whatsapp-float" href="https://wa.me/5511913268620?text=🚨%20EMERGÊNCIA%20MARLIFT%20-%20Preciso%20de%20atendimento%20*URGENTE*%20para%20minha%20empilhadeira!%20(Chamado%2024hs)" target="_blank" aria-label="WhatsApp 24hs - Chamado Emergencial">
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+    <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/>
+  </svg>
+  24hs - Chamado Emergencial
+</a>
 
-        window.addEventListener('resize', () => {
-            resizeCanvas();
-            if (!prefersReducedMotion) initParticles();
-        });
+<!-- Script do Formulário -->
+<script>
+  function enviarMensagem() {
+    // Número solicitado: 98988248877 (Formato WhatsApp: 55 + DDD + Número)
+    const telEmpresa = "5598988248877"; 
+    
+    const nome = document.getElementById('nome').value;
+    const email = document.getElementById('email').value;
+    const telefone = document.getElementById('telefone').value;
 
-        document.addEventListener('mousemove', (e) => {
-            mouseX = e.clientX;
-            mouseY = e.clientY;
-        });
+    // Validação simples
+    if(!nome || !email || !telefone) {
+      alert("Por favor, preencha todos os campos para continuar.");
+      return;
+    }
 
-        // ========== LIGHTBOX ==========
-        const galleryItems = document.querySelectorAll('.gallery-item');
-        const lightbox = document.getElementById('lightbox');
-        const lightboxImg = document.getElementById('lightbox-img');
-        const lightboxTitle = document.getElementById('lightbox-title');
-        const lightboxDesc = document.getElementById('lightbox-desc');
-        const closeBtn = document.querySelector('.lightbox-close');
-        const prevBtn = document.querySelector('.lightbox-prev');
-        const nextBtn = document.querySelector('.lightbox-next');
-        let currentIndex = 0;
+    const mensagem = `Olá! Sou ${nome}, email: ${email} telefone: ${telefone}.
+Gostaria de fazer um orçamento sem compromisso.`;
+    
+    // Codifica a mensagem para o formato de URL
+    const url = `https://wa.me/${telEmpresa}?text=${encodeURIComponent(mensagem)}`;
+    
+    window.open(url, '_blank'); // Abre o WhatsApp em uma nova aba
+  }
+</script>
 
-        function openLightbox(index) {
-            currentIndex = index;
-            const item = galleryItems[currentIndex];
-            const img = item.querySelector('img');
-            lightboxImg.src = img.src;
-            lightboxImg.alt = img.alt;
-            lightboxTitle.textContent = item.dataset.title || '';
-            lightboxDesc.textContent = item.dataset.desc || '';
-            lightbox.classList.add('active');
-            document.body.style.overflow = 'hidden';
-            closeBtn.focus();
-        }
-
-        function closeLightbox() {
-            lightbox.classList.remove('active');
-            document.body.style.overflow = '';
-            if (galleryItems[currentIndex]) galleryItems[currentIndex].focus();
-        }
-
-        function showPrev() {
-            currentIndex = (currentIndex - 1 + galleryItems.length) % galleryItems.length;
-            openLightbox(currentIndex);
-        }
-
-        function showNext() {
-            currentIndex = (currentIndex + 1) % galleryItems.length;
-            openLightbox(currentIndex);
-        }
-
-        galleryItems.forEach((item, index) => {
-            item.addEventListener('click', () => openLightbox(index));
-            item.addEventListener('keydown', (e) => {
-                if (e.key === 'Enter' || e.key === ' ') {
-                    e.preventDefault();
-                    openLightbox(index);
-                }
-            });
-        });
-
-        closeBtn.addEventListener('click', closeLightbox);
-        prevBtn.addEventListener('click', showPrev);
-        nextBtn.addEventListener('click', showNext);
-        lightbox.addEventListener('click', (e) => {
-            if (e.target === lightbox) closeLightbox();
-        });
-        document.addEventListener('keydown', (e) => {
-            if (!lightbox.classList.contains('active')) return;
-            if (e.key === 'Escape') closeLightbox();
-            if (e.key === 'ArrowLeft') showPrev();
-            if (e.key === 'ArrowRight') showNext();
-        });
-
-        // ========== ANIMAÇÃO DE ENTRADA DOS CONTATOS E MAPA (CORRIGIDA) ==========
-        const fadeElements = document.querySelectorAll('.contact-item, .mapa-container');
-        
-        const observerOptions = {
-            threshold: 0.15,
-            rootMargin: '0px 0px -30px 0px'
-        };
-        
-        const fadeObserver = new IntersectionObserver((entries) => {
-            entries.forEach(entry => {
-                if (entry.isIntersecting) {
-                    entry.target.classList.add('visible');
-                    fadeObserver.unobserve(entry.target);
-                }
-            });
-        }, observerOptions);
-        
-        fadeElements.forEach(el => {
-            // Já começa com opacity:0 e transform via CSS; a classe .visible trará opacity:1
-            fadeObserver.observe(el);
-        });
-    </script>
 </body>
 </html>
