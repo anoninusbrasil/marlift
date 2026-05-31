@@ -33,7 +33,7 @@
     header {
       background: #000;
       padding: 20px;
-      border-bottom: 2px solid #ff6a00;
+      border-bottom: 2px solid #ffd700;
       display: flex;
       align-items: center;
       justify-content: space-between;
@@ -62,13 +62,13 @@
       display: block;
       text-decoration: none;
       transition: all 0.2s ease;
-      border: 1px solid #ff6a00;
+      border: 1px solid #ffd700;
       box-shadow: 0 2px 6px rgba(0,0,0,0.3);
       overflow: hidden;
     }
     .banner-anuncie:hover {
       background: linear-gradient(135deg, #3a3a3a, #252525);
-      border-color: #ff8c33;
+      border-color: #ffea00;
       transform: scale(0.99);
     }
 
@@ -104,7 +104,7 @@
 
     /* BANNER PRINCIPAL */
     .banner {
-      background: linear-gradient(90deg, #000, #ff6a00);
+      background: linear-gradient(90deg, #000, #ffd700);
       padding: 30px 20px;
       text-align: center;
     }
@@ -127,9 +127,9 @@
     }
 
     .section h2 {
-      color: #ff6a00;
+      color: #ffd700;
       margin-bottom: 20px;
-      border-left: 4px solid #ff6a00;
+      border-left: 4px solid #ffd700;
       padding-left: 15px;
     }
 
@@ -165,7 +165,7 @@
 
     .card h3 {
       margin: 0 0 10px;
-      color: #ff6a00;
+      color: #ffd700;
     }
 
     .card p {
@@ -182,7 +182,7 @@
       font-size: 1.6rem;
       font-weight: bold;
       margin-bottom: 25px;
-      color: #ff6a00;
+      color: #ffd700;
     }
 
     .brands-image-wrapper {
@@ -304,7 +304,7 @@
       color: #fff;
     }
     .form-section h2 span {
-      color: #ff6a00;
+      color: #ffd700;
     }
 
     #whatsAppForm {
@@ -332,12 +332,12 @@
     }
 
     .form-group input:focus {
-      border-color: #ff6a00;
+      border-color: #ffd700;
       box-shadow: 0 0 0 2px rgba(255, 106, 0, 0.2);
     }
 
     .btn-submit-form {
-      background: #ff6a00;
+      background: #ffd700;
       color: #fff;
       padding: 14px;
       border: none;
@@ -353,7 +353,7 @@
     }
 
     .btn-submit-form:hover {
-      background: #e05e00;
+      background: #daa520;
       transform: scale(1.02);
     }
 
@@ -363,7 +363,7 @@
       text-align: center;
       font-size: 0.9rem;
       color: #ccc;
-      border-top: 2px solid #ff6a00;
+      border-top: 2px solid #ffd700;
     }
 
     /* Botão flutuante */
@@ -576,7 +576,11 @@
       return;
     }
 
-    const mensagem = `Olá! Sou ${nome}, email: ${email} telefone: ${telefone}.
+    const mensagem = `*Olá!* Sou ${nome}
+    
+✉️ email: ${email}
+📱 telefone: ${telefone}.
+    
 Gostaria de fazer um orçamento sem compromisso.`;
     
     // Codifica a mensagem para o formato de URL
